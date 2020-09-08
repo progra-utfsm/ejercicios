@@ -1,0 +1,33 @@
+site_name: Ejercicios Progra
+copyright: Copyright &copy; 2020 - Progra UTFSM
+theme:
+  name: material
+  language: es
+  favicon: images/favicon.png
+  icon: 
+    logo: fontawesome/solid/laptop-code
+    repo: fontawesome/brands/github
+  features:
+    - tabs
+    - instant
+    - navigation.expand
+nav:
+  - Inicio: index.md
+  - Secuenciales: 
+    - Inicio: secuenciales/index.md
+    - Pitágoras: secuenciales/pitagoras.md
+    - Número Invertido: secuenciales/numero-invertido.md
+    - Área Triángulo: secuenciales/area-triangulo.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
