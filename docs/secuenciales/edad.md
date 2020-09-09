@@ -5,5 +5,5 @@ Se puede suponer que todos los años tienen $365$ días y que todos los meses ti
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/edad.py"
+    --8<-- "python/secuenciales/edad.py"
     ```

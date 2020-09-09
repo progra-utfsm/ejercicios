@@ -10,5 +10,5 @@ donde $a$, $b$ y $c$ son las longitudes de cada lado y $s=\dfrac{a+b+c}{2}$ es e
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/area_triangulo.py"
+    --8<-- "python/secuenciales/area_triangulo.py"
     ```

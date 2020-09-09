@@ -16,6 +16,6 @@ Ingrese numero: 241
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/invertido.py"
+    --8<-- "python/secuenciales/invertido.py"
     ```
     
