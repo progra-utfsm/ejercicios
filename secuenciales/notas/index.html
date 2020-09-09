@@ -15,7 +15,7 @@
     
     
       
-        <title>Número Invertido - Ejercicios Progra</title>
+        <title>Notas - Ejercicios Progra</title>
       
     
     
@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#numero-invertido" class="md-skip">
+        <a href="#que-nota-necesito" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -77,7 +77,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Número Invertido
+              Notas
             
           </span>
         </div>
@@ -243,6 +243,54 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../area-triangulo/" title="Área Triángulo" class="md-nav__link">
+      Área Triángulo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cilindro/" title="Cilindro" class="md-nav__link">
+      Cilindro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../imc/" title="IMC" class="md-nav__link">
+      IMC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../viaje/" title="Viaje" class="md-nav__link">
+      Viaje
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -253,9 +301,38 @@
       
     
     
-    <a href="./" title="Número Invertido" class="md-nav__link md-nav__link--active">
-      Número Invertido
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Notas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Notas" class="md-nav__link md-nav__link--active">
+      Notas
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -266,8 +343,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../area-triangulo/" title="Área Triángulo" class="md-nav__link">
-      Área Triángulo
+    <a href="../invertido/" title="Número Invertido" class="md-nav__link">
+      Número Invertido
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../segundos/" title="Convertidor segundos" class="md-nav__link">
+      Convertidor segundos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edad/" title="Edad" class="md-nav__link">
+      Edad
     </a>
   </li>
 
@@ -294,6 +395,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -308,22 +424,26 @@
                   
                 
                 
-                <h1 id="numero-invertido">Número Invertido</h1>
-<p>Escriba un programa que pida al usuario un entero de tres dígitos, y entregue el número con los dígitos en orden inverso:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Ingrese</span> <span class="n">numero</span><span class="p">:</span> <span class="mi">345</span>
-<span class="mi">543</span>
+                <h1 id="que-nota-necesito">¿Qué nota necesito?</h1>
+<p>Un alumno desea saber que nota necesita en el tercer certamen para aprobar un ramo.
+El promedio del ramo se calcula con la siguiente formula.</p>
+<div class="arithmatex">\[\begin{equation}
+    \begin{split}
+        N_C &amp;= \dfrac{(C_1 + C_2 + C _3)}{3} \\[.5em]
+        N_F &amp;= 0.7\, N_C + 0.3\,N_L
+    \end{split}
+    \nonumber
+\end{equation}\]</div>
+<p>Donde <span class="arithmatex">\(N_C\)</span> es el promedio de certámenes, <span class="arithmatex">\(N_L\)</span> el promedio de laboratorio y <span class="arithmatex">\(N_F\)</span> la nota final.</p>
+<p>Escriba un programa que pregunte al usuario las notas de los dos primeros certámenes y la nota de laboratorio, y muestre la nota que necesita el alumno para aprobar el ramo con nota final <span class="arithmatex">\(60\)</span>.</p>
+<h2 id="ejemplo">Ejemplo</h2>
+<div class="highlight"><pre><span></span><code>Ingrese nota certamen 1: 45
+Ingrese nota certamen 2: 55
+Ingrese nota laboratorio: 65
+Necesita nota 72 en el certamen 3
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">Ingrese</span> <span class="n">numero</span><span class="p">:</span> <span class="mi">241</span>
-<span class="mi">142</span>
-</code></pre></div>
-
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese número: &quot;</span><span class="p">))</span> <span class="c1"># Entrada de datos</span>
-<span class="n">d1</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">100</span> <span class="c1"># Obtención del primer dígito</span>
-<span class="n">d2</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1"># Obtención del segundo dígito</span>
-<span class="n">d3</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1"># Obtención del tercer dígito</span>
-<span class="n">n_inv</span> <span class="o">=</span> <span class="n">d3</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">d2</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">d1</span> <span class="c1"># Se genera el número invertido</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n_inv</span><span class="p">)</span> <span class="c1"># Salida de datos</span>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 </details>
@@ -345,7 +465,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
         
-          <a href="../pitagoras/" title="Pitágoras" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../viaje/" title="Viaje" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -354,19 +474,19 @@
                 <span class="md-footer-nav__direction">
                   Anterior
                 </span>
-                Pitágoras
+                Viaje
               </div>
             </div>
           </a>
         
         
-          <a href="../area-triangulo/" title="Área Triángulo" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../invertido/" title="Número Invertido" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Siguiente
                 </span>
-                Área Triángulo
+                Número Invertido
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
