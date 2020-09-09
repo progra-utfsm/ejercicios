@@ -16,12 +16,20 @@ nav:
   - Secuenciales: 
     - Inicio: secuenciales/index.md
     - Pitágoras: secuenciales/pitagoras.md
-    - Número Invertido: secuenciales/numero-invertido.md
     - Área Triángulo: secuenciales/area-triangulo.md
+    - Cilindro: secuenciales/cilindro.md
+    - IMC: secuenciales/imc.md
+    - Viaje: secuenciales/viaje.md
+    - Notas: secuenciales/notas.md
+    - Número Invertido: secuenciales/invertido.md
+    - Convertidor segundos: secuenciales/segundos.md
+    - Edad: secuenciales/edad.md
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: docs
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
