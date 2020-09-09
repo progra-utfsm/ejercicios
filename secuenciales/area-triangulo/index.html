@@ -386,7 +386,21 @@
     A = \sqrt{s\,(s-a)(s-b)(s-c)}
 \end{equation}\]</div>
 <p>donde <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> y <span class="arithmatex">\(c\)</span> son las longitudes de cada lado y <span class="arithmatex">\(s=\dfrac{a+b+c}{2}\)</span> es el semiperímetro.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entrada de datos</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese longitud de lado 1: &quot;</span><span class="p">))</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese longitud de lado 2: &quot;</span><span class="p">))</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese longitud de lado 3: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Cálculos</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">l1</span> <span class="o">+</span> <span class="n">l2</span> <span class="o">+</span> <span class="n">l3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># semiperímetro</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">l1</span> <span class="c1"># diferencia1</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">l2</span> <span class="c1"># diferencia2</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="n">l3</span> <span class="c1"># diferencia3</span>
+<span class="n">prod</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">d1</span> <span class="o">*</span> <span class="n">d2</span> <span class="o">*</span> <span class="n">d3</span> <span class="c1"># producto de diferencias y semiperimetro</span>
+<span class="n">area</span><span class="o">=</span> <span class="n">prod</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># raíz cuadrada ¿cómo se podría hacer lo mismo utilizando math.sqrt()?</span>
+
+<span class="c1"># Salida de datos</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;El área del triángulo es&quot;</span><span class="p">,</span> <span class="n">area</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

@@ -382,7 +382,16 @@
                 
                 <h1 id="convertidor-de-segundos">Convertidor de segundos</h1>
 <p>Realice un programa que convierta segundos a horas y minutos.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entrada de datos</span>
+<span class="n">segundos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Cantidad de segundos: &#39;</span><span class="p">))</span>
+
+<span class="n">minutos</span> <span class="o">=</span> <span class="n">segundos</span> <span class="o">//</span> <span class="mi">60</span> <span class="c1"># Cantidad de minutos</span>
+<span class="n">segundos</span> <span class="o">=</span> <span class="n">segundos</span> <span class="o">%</span> <span class="mi">60</span> <span class="c1"># Segundos restantes</span>
+<span class="n">horas</span> <span class="o">=</span> <span class="n">minutos</span> <span class="o">//</span> <span class="mi">60</span> <span class="c1"># Cantidad de horas obtenidas si minutos &gt;= 60</span>
+<span class="n">minutos</span> <span class="o">=</span> <span class="n">minutos</span> <span class="o">%</span> <span class="mi">60</span> <span class="c1"># Minutos restantes</span>
+
+<span class="c1"># Salida de datos </span>
+<span class="k">print</span><span class="p">(</span><span class="n">horas</span><span class="p">,</span><span class="s1">&#39;horas,&#39;</span><span class="p">,</span> <span class="n">minutos</span><span class="p">,</span> <span class="s1">&#39;minutos y&#39;</span><span class="p">,</span> <span class="n">segundos</span><span class="p">,</span> <span class="s1">&#39;segundos&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

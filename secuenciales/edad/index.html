@@ -383,7 +383,29 @@
                 <h1 id="edad">Edad</h1>
 <p>Dada la fecha actual (d2/m2/a2) y la fecha de nacimiento de una persona (d1/m1/a1), indicarle su edad en años, meses y días. 
 Se puede suponer que todos los años tienen <span class="arithmatex">\(365\)</span> días y que todos los meses tienen <span class="arithmatex">\(30\)</span> días.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entradas</span>
+<span class="c1"># Fecha actual</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ingrese la fecha actual: &quot;</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese día: &quot;</span><span class="p">))</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese mes: &quot;</span><span class="p">))</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese año: &quot;</span><span class="p">))</span>
+<span class="c1"># Fecha de nacimiento</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ingrese su fecha de nacimiento: &quot;</span><span class="p">)</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese día: &quot;</span><span class="p">))</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese mes: &quot;</span><span class="p">))</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese año: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Transformar fechas a dias</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">+</span> <span class="n">m1</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="n">d1</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">a2</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="n">d2</span>
+<span class="c1"># Calcular diferencia</span>
+<span class="n">dif</span> <span class="o">=</span> <span class="n">f2</span> <span class="o">-</span> <span class="n">f1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">dif</span> <span class="o">//</span> <span class="mi">365</span> <span class="c1"># Obtener cantidad de años</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">dif</span> <span class="o">%</span> <span class="mi">365</span><span class="p">)</span> <span class="o">//</span> <span class="mi">30</span> <span class="c1"># Obtener cantidad de meses</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">dif</span> <span class="o">%</span> <span class="mi">365</span><span class="p">)</span> <span class="o">%</span> <span class="mi">30</span> <span class="c1"># Obtener cantidad de días</span>
+
+<span class="c1"># Salida</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

@@ -435,7 +435,12 @@
 <span class="mi">142</span>
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese número: &quot;</span><span class="p">))</span> <span class="c1"># Entrada de datos</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">100</span> <span class="c1"># Obtención del primer dígito</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1"># Obtención del segundo dígito</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1"># Obtención del tercer dígito</span>
+<span class="n">n_inv</span> <span class="o">=</span> <span class="n">d3</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">d2</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">d1</span> <span class="c1"># Se genera el número invertido</span>
+<span class="k">print</span><span class="p">(</span><span class="n">n_inv</span><span class="p">)</span> <span class="c1"># Salida de datos</span>
 </code></pre></div>
 
 </details>
