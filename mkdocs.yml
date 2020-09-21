@@ -24,6 +24,11 @@ nav:
     - Número Invertido: secuenciales/invertido.md
     - Convertidor segundos: secuenciales/segundos.md
     - Edad: secuenciales/edad.md
+  - Condicionales:
+    - Inicio: condicionales/index.md
+    - Tablas de verdad: condicionales/tablas.md
+    - Expresiones booleanas: condicionales/expresiones.md
+    - Ejemplos: condicionales/ejemplos.md
 markdown_extensions:
   - admonition
   - pymdownx.details
