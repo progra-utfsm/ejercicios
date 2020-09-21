@@ -34,7 +34,7 @@
 
     ??? danger "Solución"
         - Entre $6$ y $17$
-        - Mayor o igual a $25.
+        - Mayor o igual a $25$.
 
     ¿Es equivalente este código?
 
