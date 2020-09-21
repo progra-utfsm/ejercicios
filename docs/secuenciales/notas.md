@@ -26,5 +26,5 @@ Necesita nota 72 en el certamen 3
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/notas.py"
+    --8<-- "python/secuenciales/notas.py"
     ```

@@ -4,5 +4,5 @@ Dado un viaje circular que comienza en un punto (coordenadas), y visita dos punt
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/viaje.py"
+    --8<-- "python/secuenciales/viaje.py"
     ```

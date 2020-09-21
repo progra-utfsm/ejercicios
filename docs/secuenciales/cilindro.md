@@ -9,5 +9,5 @@ Realice un programa que reciba como entrada el radio basal y altura, y calcule e
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/cilindro.py"
+    --8<-- "python/secuenciales/cilindro.py"
     ```

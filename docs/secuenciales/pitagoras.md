@@ -10,5 +10,5 @@ La hipotenusa es 8.6023252670426267
 
 ??? danger "Solución"
 	```python
-    --8<-- ";python/secuenciales/pitagoras.py"
+    --8<-- "python/secuenciales/pitagoras.py"
 	```

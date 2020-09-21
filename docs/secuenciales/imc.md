@@ -9,5 +9,5 @@ Queremos un programa para calcular el $IMC$ de una persona a partir de su peso e
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/secuenciales/imc.py"
+    --8<-- "python/secuenciales/imc.py"
     ```
