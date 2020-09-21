@@ -388,7 +388,25 @@
 <li>Área total  </li>
 <li>Volumen de un cilindro </li>
 </ul>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="c1"># Entradas</span>
+<span class="n">radio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Radio: &#39;</span><span class="p">))</span>
+<span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Altura: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Cálculos</span>
+<span class="n">area_base</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radio</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">perimetro_base</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radio</span>
+<span class="n">volumen_cilindro</span> <span class="o">=</span> <span class="n">area_base</span> <span class="o">*</span> <span class="n">altura</span>
+<span class="n">area_bases_cilindro</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">area_base</span>
+<span class="n">area_lateral_cilindro</span> <span class="o">=</span> <span class="n">perimetro_base</span> <span class="o">*</span> <span class="n">altura</span>
+<span class="n">area_total_cilindro</span> <span class="o">=</span> <span class="n">area_bases_cilindro</span> <span class="o">+</span> <span class="n">area_lateral_cilindro</span>
+
+<span class="c1"># Salidas </span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Area bases:&#39;</span><span class="p">,</span> <span class="n">area_bases_cilindro</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Area lateral:&#39;</span><span class="p">,</span> <span class="n">area_lateral_cilindro</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Area total:&#39;</span><span class="p">,</span> <span class="n">area_total_cilindro</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Volumen:&#39;</span><span class="p">,</span> <span class="n">volumen_cilindro</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

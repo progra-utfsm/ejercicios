@@ -388,7 +388,18 @@ Queremos un programa para calcular el <span class="arithmatex">\(IMC\)</span> de
 <li><span class="arithmatex">\(1 \,[\text{in}] = 0.0254 \, [\text{m}]\)</span></li>
 <li><span class="arithmatex">\(1\,[\text{lb}] = 0.45359237 \, [\text{kg}]\)</span></li>
 </ul>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entrada</span>
+<span class="n">pies</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Altura [pies]: &#39;</span><span class="p">))</span>
+<span class="n">pulgadas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Altura [pulgadas]: &#39;</span><span class="p">))</span>
+<span class="n">lb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Peso [lb]: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Cálculos</span>
+<span class="n">altura</span> <span class="o">=</span> <span class="n">pies</span> <span class="o">*</span> <span class="mf">0.3048</span> <span class="o">+</span> <span class="n">pulgadas</span> <span class="o">*</span> <span class="mf">0.0254</span> <span class="c1"># Altura a [m]</span>
+<span class="n">masa</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">lb</span> <span class="c1"># Peso a [kg]</span>
+<span class="n">imc</span> <span class="o">=</span> <span class="n">masa</span> <span class="o">/</span> <span class="n">altura</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># IMC</span>
+
+<span class="c1"># Salida</span>
+<span class="k">print</span><span class="p">(</span><span class="n">imc</span><span class="p">,</span><span class="s1">&#39;[kg/m2]&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

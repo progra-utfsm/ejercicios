@@ -443,7 +443,16 @@ Ingrese nota laboratorio: 65
 Necesita nota 72 en el certamen 3
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entrada de datos</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese nota certamen 1: &quot;</span><span class="p">))</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese nota certamen 2: &quot;</span><span class="p">))</span>
+<span class="n">nl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese nota laboratorio: &quot;</span><span class="p">))</span>
+<span class="c1"># Despejando la formula se obtien que c3 es</span>
+<span class="n">nc</span> <span class="o">=</span> <span class="p">(</span><span class="mf">59.5</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">nl</span><span class="p">)</span> <span class="o">/</span> <span class="mf">0.7</span> <span class="c1"># Se utiliza 59.5 como equivalente a 60 por el redondeo que se realiza</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">nc</span> <span class="o">-</span> <span class="p">(</span><span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Se añade + 1 para ajustar la parte decimal</span>
+<span class="c1"># Por ejemplo no se puede obtener nota 45.123123, se requeriría un 46</span>
+<span class="c1">#Salida de datos</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Necesita nota&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">c3</span><span class="p">)),</span> <span class="s2">&quot;en el certamen 3&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
