@@ -4,12 +4,12 @@ Escriba un programa que pida al usuario un entero de tres dígitos, y entregue e
 
 ## Ejemplos
 
-```python
+```
 Ingrese numero: 345
 543
 ```
 
-```python
+```
 Ingrese numero: 241
 142
 ```

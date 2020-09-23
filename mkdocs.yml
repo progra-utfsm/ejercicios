@@ -29,6 +29,14 @@ nav:
     - Tablas de verdad: condicionales/tablas.md
     - Expresiones booleanas: condicionales/expresiones.md
     - Ejemplos: condicionales/ejemplos.md
+    - Ecuación: condicionales/ecuacion.md
+    - Calculadora: condicionales/calculadora.md
+    - Círculo: condicionales/circulo.md
+    - Mayor: condicionales/mayor.md
+    - Tenis: condicionales/tenis.md
+    - Triángulo: condicionales/triangulo.md
+    - Horas extra: condicionales/horas_extra.md
+    - Llamadas: condicionales/llamadas.md
 markdown_extensions:
   - admonition
   - pymdownx.details
