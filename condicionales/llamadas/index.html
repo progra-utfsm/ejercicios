@@ -612,7 +612,44 @@
 </tbody>
 </table>
 <p>Escriba un programa que lea como entrada la zona de una llamada, el horario (día o noche) y la cantidad de minutos, e indique el costo total de la llamada. Debe validarse que la zona, el horario y la cantidad de minutos sean válidos. De lo contrario, termina con error.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entrada de código de zona</span>
+<span class="n">zona</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Código de zona: &#39;</span><span class="p">))</span> 
+
+<span class="c1"># Verificación de zona</span>
+<span class="k">if</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">elif</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mf">2.2</span>
+<span class="k">elif</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mf">4.5</span>
+<span class="k">elif</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">19</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="k">elif</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">23</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">elif</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">25</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">elif</span> <span class="n">zona</span> <span class="o">==</span> <span class="mi">29</span><span class="p">:</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Zona inválida&#39;</span><span class="p">)</span>
+    <span class="n">costo_minuto</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Si hay minutos para cobrar</span>
+<span class="k">if</span> <span class="n">costo_minuto</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># Entrada de horario</span>
+    <span class="n">horario</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Horario de la llamada (dia/noche): &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">horario</span> <span class="o">!=</span> <span class="s1">&#39;dia&#39;</span> <span class="ow">and</span> <span class="n">horario</span> <span class="o">!=</span> <span class="s1">&#39;noche&#39;</span><span class="p">:</span> <span class="c1"># Verificación de horario</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Horario inválido&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Entrada de cantidad de minutos</span>
+        <span class="n">minutos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Cantidad de minutos: &#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">minutos</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Minutos debe ser positivo&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="n">minutos</span> <span class="o">*</span> <span class="n">costo_minuto</span>
+            <span class="k">if</span> <span class="n">horario</span> <span class="o">==</span> <span class="s1">&#39;noche&#39;</span><span class="p">:</span> <span class="c1"># Aplicación del descuento</span>
+                <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">*</span> <span class="mf">0.8</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Costo total:&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

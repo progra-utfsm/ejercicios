@@ -567,7 +567,26 @@
 <p>Dada la cantidad de horas trabajadas en una semana por una persona, se debe calcular el monto que se le debe pagar por concepto de horas extra, es decir, por las horas trabajadas por sobre las <span class="arithmatex">\(44\)</span> obligatorias.</p>
 <p>Se debe leer también la categoría del empleado (un entero entre <span class="arithmatex">\(1\)</span> y <span class="arithmatex">\(5\)</span>), pues dependiendo de la categoría es el monto a pagar por cada hora extra. Los de categoría <span class="arithmatex">\(1\)</span> reciben <span class="arithmatex">\(\$ 5.000\)</span> por hora extra, los de categoría <span class="arithmatex">\(2\)</span> reciben <span class="arithmatex">\(\$8.000\)</span> y los de categoría <span class="arithmatex">\(3\)</span> reciben <span class="arithmatex">\(\$10.000\)</span>. Los de categoría <span class="arithmatex">\(4\)</span> y <span class="arithmatex">\(5\)</span> no tienen derecho al pago por sus horas extra.</p>
 <p>El máximo número de horas extra que se pueden pagar en una semana es <span class="arithmatex">\(10\)</span>. Si se trabajan más, no se recibe pago alguno.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Calcula el monto a pagar por concepto de horas extra</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Categoría del empleado (1-5): &#39;</span><span class="p">))</span>
+<span class="n">horas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Horas totales trabajadas en la semana: &#39;</span><span class="p">))</span>
+<span class="n">extra</span> <span class="o">=</span> <span class="n">horas</span> <span class="o">-</span> <span class="mi">44</span>
+<span class="k">if</span> <span class="n">extra</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Si hay horas extra</span>
+    <span class="k">if</span> <span class="n">cat</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">extra</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># Limitar el maximo numero de horas extra a 10</span>
+            <span class="n">extra</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="c1"># Verificar categoría    </span>
+        <span class="k">if</span> <span class="n">cat</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">monto</span> <span class="o">=</span> <span class="mi">5000</span> <span class="o">*</span> <span class="n">extra</span>
+        <span class="k">elif</span> <span class="n">cat</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">monto</span> <span class="o">=</span> <span class="mi">8000</span> <span class="o">*</span> <span class="n">extra</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">monto</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">extra</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;A pagar: $&#39;</span><span class="p">,</span> <span class="n">monto</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Por su categoría, no tiene derecho al pago de horas extra&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No trabajó horas extra esta semana&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
