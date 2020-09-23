@@ -7,7 +7,7 @@ if extra > 0: # Si hay horas extra
         if extra > 10: # Limitar el maximo numero de horas extra a 10
             extra = 10
         # Verificar categoría    
-        if cat==1:
+        if cat == 1:
             monto = 5000 * extra
         elif cat == 2:
             monto = 8000 * extra
