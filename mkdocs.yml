@@ -37,6 +37,9 @@ nav:
     - Triángulo: condicionales/triangulo.md
     - Horas extra: condicionales/horas_extra.md
     - Llamadas: condicionales/llamadas.md
+  - Ciclos:
+    - Ejemplos: ciclos/ejemplos.md
+    - Ruteos: ciclos/ruteos.md 
 markdown_extensions:
   - admonition
   - pymdownx.details
