@@ -40,6 +40,13 @@ nav:
   - Ciclos:
     - Ejemplos: ciclos/ejemplos.md
     - Ruteos: ciclos/ruteos.md 
+    - Polígonos: ciclos/poligono.md
+    - Serie: ciclos/serie.md
+    - FizzBuzz: ciclos/fizzbuzz.md
+    - Robot: ciclos/robot.md
+    - Pirata: ciclos/pirata.md
+    - Rango: ciclos/rango.md
+    - VAN: ciclos/van.md
 markdown_extensions:
   - admonition
   - pymdownx.details
