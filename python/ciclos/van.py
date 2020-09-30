@@ -12,5 +12,5 @@ while van < 0:
     # Aumentar el numero de mes
     n += 1 
     # Salida de datos
-    print("VAN: ", int(float(van))) # VAN calculado. Se redondea y transforma en entero
+    print("VAN: ", int(van)) # VAN calculado. Se redondea y transforma en entero
 

@@ -773,7 +773,25 @@ Tesoro encontrado
 </code></pre></div>
 
 <p><em>Nota:</em> No se base en los valores el ejemplo ya que los valores <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> son aleatorios y cambian en cada ejecución.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="c1"># Posicion del tesoro</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">encontrado</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># Variable </span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">encontrado</span><span class="p">:</span>
+    <span class="c1"># Intento de adivinar</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingrese x: &#39;</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingrese y: &#39;</span><span class="p">))</span>
+    <span class="c1"># Verificar</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">encontrado</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Calculo de distancia</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">sqrt</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Tesoro a&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="c1"># Luego de terminar el ciclo, el tesoro fue encontrado</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Tesoro encontrado&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

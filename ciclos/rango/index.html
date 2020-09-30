@@ -776,7 +776,26 @@ Valor 7: 2.80
 El rango es 6.87
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Numero de valores</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Cuantos valores ingresara? &quot;</span><span class="p">))</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Variables para buscar menor y mayor</span>
+<span class="n">mayor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)</span> <span class="c1"># Comenzar con un numero muy pequeño</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span> <span class="c1"># Comenzar con un numero muy grande</span>
+
+<span class="c1"># Ingresar valores</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Valor &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">mayor</span><span class="p">:</span>
+        <span class="n">mayor</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">menor</span><span class="p">:</span>
+        <span class="n">menor</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Calcular rango y dejar con dos decimales</span>
+<span class="n">rango</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">mayor</span> <span class="o">-</span> <span class="n">menor</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;El rango es&quot;</span><span class="p">,</span> <span class="n">rango</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

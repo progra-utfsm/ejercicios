@@ -757,13 +757,13 @@
                 <h1 id="valor-actual-neto">Valor Actual Neto</h1>
 <p>En finanzas, el <em>valor actual neto</em> (<span class="arithmatex">\(VAN\)</span>) es un indicador de cuan rentable será un proyecto.
 Se calcula sumando los flujos de dinero de cada mes divididos por <span class="arithmatex">\((1 + r)^n\)</span>, donde <span class="arithmatex">\(n\)</span> es el número del mes y <span class="arithmatex">\(r\)</span> es la tasa de descuento mensual, y restando la inversión inicial.</p>
-<p>Por ejemplo, en un proyecto en que la inversión iniciales <span class="arithmatex">\(\$900\)</span>,los flujos de dinero estimados para los primeros cuatro meses son <span class="arithmatex">\(\$550\)</span>, <span class="arithmatex">\(\$230\)</span>, <span class="arithmatex">\(\$341\)</span> y <span class="arithmatex">\(\$190\)</span>, y la tasa de descuento mensual es de <span class="arithmatex">\(4\%\)</span>, el valor actual neto es:</p>
+<p>Por ejemplo, en un proyecto en que la inversión iniciales <span class="arithmatex">\(\$900\)</span>, los flujos de dinero estimados para los primeros cuatro meses son <span class="arithmatex">\(\$550\)</span>, <span class="arithmatex">\(\$230\)</span>, <span class="arithmatex">\(\$341\)</span> y <span class="arithmatex">\(\$190\)</span>, y la tasa de descuento mensual es de <span class="arithmatex">\(4\%\)</span>, el valor actual neto es:</p>
 <div class="arithmatex">\[\begin{equation}
     VAN = -900 + \dfrac{550}{(1 + 0.04)^1} + \dfrac{230}{(1 + 0.04)^2} 
         + \dfrac{341}{(1 + 0.04)^3} + \dfrac{190}{(1 + 0.04)^4}
 \end{equation}\]</div>
 <p>Si el <span class="arithmatex">\(VAN\)</span> da negativo, entonces no es conveniente comenzar el proyecto.</p>
-<p>Escriba un programa que pida al usuario ingresar la inversión inicial y el porcentaje de tasa de descuento. A continuació, debe preguntar el flujo de dinero estimado para cada mes y mostrar cuál es la parte entera del <span class="arithmatex">\(VAN\)</span> hasta ese momento. El programa debe terminar apenas el <span class="arithmatex">\(VAN\)</span> comience a dar positivo.</p>
+<p>Escriba un programa que pida al usuario ingresar la inversión inicial y el porcentaje de tasa de descuento. A continuación, debe preguntar el flujo de dinero estimado para cada mes y mostrar cuál es la parte entera del <span class="arithmatex">\(VAN\)</span> hasta ese momento. El programa debe terminar apenas el <span class="arithmatex">\(VAN\)</span> comience a dar positivo.</p>
 <p>Suponga que todos los datos ingresados son válidos.</p>
 <h2 id="ejemplo">Ejemplo</h2>
 <div class="highlight"><pre><span></span><code>Inversion inicial: 900 
@@ -776,7 +776,21 @@ Flujo mes 3: 341
 VAN: 144
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Entrada de datos</span>
+<span class="n">inv</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inversion inicial: &quot;</span><span class="p">))</span> <span class="c1"># Inversion inicial</span>
+<span class="n">tasa</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;% tasa de descuento: &quot;</span><span class="p">))</span> <span class="c1"># Tasa</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">tasa</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># % a decimal</span>
+<span class="n">van</span> <span class="o">=</span> <span class="o">-</span><span class="n">inv</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="k">while</span> <span class="n">van</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># Entrada de flujo de dinero</span>
+    <span class="n">flujo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Flujo mes &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span><span class="p">))</span>
+    <span class="c1"># Calculo de formular</span>
+    <span class="n">van</span> <span class="o">+=</span> <span class="n">flujo</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">**</span> <span class="n">n</span> 
+    <span class="c1"># Aumentar el numero de mes</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span> 
+    <span class="c1"># Salida de datos</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;VAN: &quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">van</span><span class="p">))</span> <span class="c1"># VAN calculado. Se redondea y transforma en entero</span>
 </code></pre></div>
 
 </details>

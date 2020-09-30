@@ -771,7 +771,35 @@ Distancia recorrida: 8 [m]
 Distancia óptima: 2 [m]
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Posicion inicial </span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># Distancia recorrida por el robot</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># Variable para mantener los movimientos</span>
+<span class="n">mov</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1"># Se inicializa vacia</span>
+<span class="c1"># Mientras no se ingrese el caracter de detencion</span>
+<span class="k">while</span> <span class="n">mov</span> <span class="o">!=</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span>
+    <span class="c1"># Entrada de movimientos</span>
+    <span class="n">mov</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Movimiento: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mov</span> <span class="o">==</span><span class="s1">&#39;N&#39;</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># Utilizamos la distancia de Manhattan ya que nos movemos en una cuadrícula</span>
+<span class="c1"># Se obtiene con la posicion final con respecto al origen</span>
+<span class="n">optima</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="c1"># Distancias</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Distancia recorrida:&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="s1">&#39;[m]&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Distancia óptima:&#39;</span><span class="p">,</span> <span class="n">optima</span><span class="p">,</span> <span class="s1">&#39;[m]&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
