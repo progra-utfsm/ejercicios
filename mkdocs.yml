@@ -47,6 +47,8 @@ nav:
     - Pirata: ciclos/pirata.md
     - Rango: ciclos/rango.md
     - VAN: ciclos/van.md
+  - Funciones:
+    - Comentarios: funciones/comentarios.md
 markdown_extensions:
   - admonition
   - pymdownx.details
