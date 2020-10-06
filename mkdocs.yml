@@ -49,6 +49,12 @@ nav:
     - VAN: ciclos/van.md
   - Funciones:
     - Comentarios: funciones/comentarios.md
+    - Fuerza gravitacional: funciones/gravitacional.md
+    - Invertir Número: funciones/invertir.md
+    - Aproximación exponencial: funciones/exponencial.md
+    - Método de Newton: funciones/newton.md
+    - Crédito Hipotecario: funciones/hipoteca.md
+    - Salario: funciones/salario.md
 markdown_extensions:
   - admonition
   - pymdownx.details
