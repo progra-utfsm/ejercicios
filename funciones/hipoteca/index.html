@@ -855,7 +855,36 @@
 25 285058.68 85517604.0 71.04
 </code></pre></div></li>
 </ol>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">cuota</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+   <span class="n">r</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1200</span><span class="p">)</span>
+   <span class="n">m</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">r</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
+   <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">monto_total</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+   <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">cuota</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">intereses_pagados</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+   <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">monto_total</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">h</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">porcentaje_intereses</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+   <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">intereses_pagados</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Datos</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">50000000</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mf">4.75</span>
+
+<span class="c1"># Preguntas 1-4</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cuota</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">monto_total</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intereses_pagados</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">porcentaje_intereses</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+
+<span class="c1"># Pregunta 5</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">cuota</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">),</span> <span class="n">monto_total</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">),</span> <span class="n">porcentaje_intereses</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+   <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
 
 </details>

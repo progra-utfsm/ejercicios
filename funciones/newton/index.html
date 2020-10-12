@@ -839,7 +839,32 @@
     x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}
 \end{equation}\]</div>
 <p>Calcule <span class="arithmatex">\(\sqrt{2}\)</span>, sabiendo que <span class="arithmatex">\(f(x)=x^2−2\)</span>, <span class="arithmatex">\(f'(x)=2x\)</span>. El número máximo de iteraciones <span class="arithmatex">\(N\)</span> y <span class="arithmatex">\(x_0\)</span> son entradas del programa.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Función</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Derivada de función</span>
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1"># Método de Newton</span>
+<span class="k">def</span> <span class="nf">metodo_newton</span><span class="p">(</span><span class="n">x_0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Para controlar el número de iteraciones</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_0</span> <span class="c1"># Valor inicial</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Entrada de datos</span>
+<span class="n">x_0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese valor inicial: &quot;</span><span class="p">))</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese numero de iteraciones: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Aproximación</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">metodo_newton</span><span class="p">(</span><span class="n">x_0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Salida de datos</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;La raiz de 2 es aproximadamente:&quot;</span><span class="p">,</span> <span class="n">sol</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

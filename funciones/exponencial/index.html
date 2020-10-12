@@ -839,7 +839,33 @@
     e^x \approx \sum_{n=0}^N \dfrac{x^n}{n!}, \quad \forall x\in \mathbb{R}, n \in \mathbb{N}_0,
 \end{equation}\]</div>
 <p>donde <span class="arithmatex">\(x\)</span> y <span class="arithmatex">\(N\)</span> son entradas del programa.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Calculo factorial</span>
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">prod</span> <span class="o">*=</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">prod</span>
+
+<span class="c1"># Función para calcular la aproximación</span>
+<span class="k">def</span> <span class="nf">aproximacion</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">exp</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
+        <span class="n">exp</span> <span class="o">+=</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">exp</span>
+
+<span class="c1"># Entrada de datos</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese N: &quot;</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese x: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Cálculo de aproximación</span>
+<span class="n">exp_aprox</span> <span class="o">=</span> <span class="n">aproximacion</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Salida con el resultado</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Valor aproximacion:&quot;</span><span class="p">,</span> <span class="n">exp_aprox</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

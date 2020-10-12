@@ -889,7 +889,56 @@
 <p>El descuento de la Isapre corresponde a un <span class="arithmatex">\(7\%\)</span> del salario base, mientras que el descuento que hace la AFP corresponde a un <span class="arithmatex">\(10\%\)</span> para el ahorro y un <span class="arithmatex">\(1,27\%\)</span> para comisión.</p>
 <p>El salario base se calcula a partir de las horas trabajadas en el mes. Cada empleado tiene un monto por hora que recibe. Las horas extra (por sobre <span class="arithmatex">\(44\)</span>) se le pagan a <span class="arithmatex">\(1,5\)</span> veces el monto por hora regular. No se pagan más de <span class="arithmatex">\(40\)</span> horas extra mensuales.</p>
 <p>Aplique descomposición de problemas para implementar un programa que calcule el salario que recibirá un empleado al término de un mes, indicando el detalle de lo ganado y lo descontado.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Calcular base considerando horas extra</span>
+<span class="k">def</span> <span class="nf">calcular_base</span><span class="p">(</span><span class="n">hrs</span><span class="p">,</span> <span class="n">monto</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">hrs</span> <span class="o">&gt;</span> <span class="mi">44</span><span class="p">:</span>
+      <span class="n">normales</span> <span class="o">=</span> <span class="mi">44</span>
+      <span class="n">extra</span> <span class="o">=</span> <span class="n">hrs</span> <span class="o">-</span> <span class="mi">44</span>
+      <span class="k">if</span> <span class="n">extra</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">:</span>
+         <span class="n">extra</span> <span class="o">=</span> <span class="mi">40</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">normales</span> <span class="o">=</span> <span class="n">hrs</span>
+      <span class="n">extra</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">return</span> <span class="n">monto</span> <span class="o">*</span> <span class="p">(</span><span class="n">normales</span> <span class="o">+</span> <span class="n">extra</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="c1"># Tabla de impuestos</span>
+<span class="k">def</span> <span class="nf">calcular_monto_impuestos</span><span class="p">(</span><span class="n">imponible</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">680022</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">0</span>
+   <span class="k">elif</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">1511160</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">27200.88</span>
+   <span class="k">elif</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">2518600</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">87647.28</span>
+   <span class="k">elif</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">3526040</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mf">13.5</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">226170.28</span>
+   <span class="k">elif</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">4533480</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mi">23</span><span class="o">/</span><span class="mi">100</span> <span class="o">-</span> <span class="mf">561144.08</span>
+   <span class="k">elif</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">6044640</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mf">30.4</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">896621.60</span>
+   <span class="k">elif</span> <span class="n">imponible</span> <span class="o">&lt;</span> <span class="mi">15615320</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mi">35</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">1174675.04</span>
+   <span class="k">return</span> <span class="n">imponible</span> <span class="o">*</span> <span class="mi">40</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">1955441.04</span>
+
+<span class="c1"># Salud y AFP</span>
+<span class="k">def</span> <span class="nf">salud</span><span class="p">(</span><span class="n">monto</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">monto</span> <span class="o">*</span> <span class="mf">0.07</span>
+
+<span class="k">def</span> <span class="nf">afp</span><span class="p">(</span><span class="n">monto</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">monto</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.0127</span><span class="p">)</span>
+
+<span class="c1"># Entrada</span>
+<span class="n">monto_por_hora</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Monto por hora: $&#39;</span><span class="p">))</span>
+<span class="n">hrs_trabajadas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Horas trabajadas: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Calculos</span>
+<span class="n">base</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">calcular_base</span><span class="p">(</span><span class="n">hrs_trabajadas</span><span class="p">,</span> <span class="n">monto_por_hora</span><span class="p">)))</span>
+<span class="n">impuestos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">calcular_monto_impuestos</span><span class="p">(</span><span class="n">base</span><span class="p">)))</span>
+<span class="n">sueldo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">base</span> <span class="o">-</span> <span class="n">impuestos</span><span class="p">))</span>
+
+<span class="c1"># Salida</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Base: $&quot;</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Impuestos: $&quot;</span><span class="p">,</span> <span class="n">impuestos</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sueldo: $&quot;</span><span class="p">,</span> <span class="n">sueldo</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

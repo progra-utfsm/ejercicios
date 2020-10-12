@@ -840,7 +840,20 @@
 \end{equation}\]</div>
 <p>donde <span class="arithmatex">\(G = 6.67428 \times 10^{−11}\)</span> <span class="arithmatex">\([\text{m}^3 \text{kg}^{−1} \text{s}^{−2}]\)</span> es la constante de gravitación universal.</p>
 <p>Escriba un programa que pregunte las masas de los planetas y su distancia, y entregue la fuerza de atracción entre ellos.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Definición de función</span>
+<span class="k">def</span> <span class="nf">cgu</span><span class="p">(</span><span class="n">masa1</span><span class="p">,</span> <span class="n">masa2</span><span class="p">,</span> <span class="n">radio</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="mf">6.67428e-11</span>
+    <span class="c1"># Aplicar la fórmula</span>
+    <span class="n">fuerza</span> <span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">masa1</span> <span class="o">*</span> <span class="n">masa2</span> <span class="o">/</span> <span class="p">(</span><span class="n">radio</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">fuerza</span>
+
+<span class="c1"># Entrada de datos</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;m1: &#39;</span><span class="p">))</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;m2: &#39;</span><span class="p">))</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Distancia: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Salida de datos llamando directamente la función dentro del print</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;La fuerza de atraccion es&#39;</span><span class="p">,</span> <span class="n">cgu</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
