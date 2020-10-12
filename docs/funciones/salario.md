@@ -21,6 +21,6 @@ Aplique descomposición de problemas para implementar un programa que calcule el
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/funciones/salario.py"
+    --8<-- "python/funciones/salario.py"
     ```
 

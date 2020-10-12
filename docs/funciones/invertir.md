@@ -31,5 +31,5 @@ Es capicua
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/funciones/inverti.py"
+    --8<-- "python/funciones/invertir.py"
     ```

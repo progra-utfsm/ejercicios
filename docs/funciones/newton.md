@@ -10,5 +10,5 @@ Calcule $\sqrt{2}$, sabiendo que $f(x)=x^2−2$, $f'(x)=2x$. El número máximo 
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/funciones/newton.py"
+    --8<-- "python/funciones/newton.py"
     ```

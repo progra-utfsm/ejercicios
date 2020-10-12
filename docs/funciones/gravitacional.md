@@ -12,5 +12,5 @@ Escriba un programa que pregunte las masas de los planetas y su distancia, y ent
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/funciones/gravitacional.py"
+    --8<-- "python/funciones/gravitacional.py"
     ```

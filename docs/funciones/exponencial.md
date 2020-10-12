@@ -10,5 +10,5 @@ donde $x$ y $N$ son entradas del programa.
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/funciones/exponencial.py"
+    --8<-- "python/funciones/exponencial.py"
     ```

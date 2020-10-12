@@ -27,5 +27,5 @@ donde
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/funciones/hipoteca.py"
+    --8<-- "python/funciones/hipoteca.py"
     ```
