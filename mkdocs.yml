@@ -55,6 +55,18 @@ nav:
     - Método de Newton: funciones/newton.md
     - Crédito Hipotecario: funciones/hipoteca.md
     - Salario: funciones/salario.md
+  - Strings:
+    - Ejemplos: strings/ejemplos.md
+    - Stringones: strings/stringones.md
+    - Coincidencia: strings/coincidencia.md
+    - ADN: strings/adn.md
+    - Fechas mágicas: strings/fechas.md
+    - Comparación: strings/comparacion.md
+    - Contraseña: strings/contraseña.md
+    - Veces: strings/veces.md
+    - Palabra más larga: strings/larga.md
+    - Eliminar: strings/eliminar.md
+    - Asignaturas: strings/asignaturas.md
 markdown_extensions:
   - admonition
   - pymdownx.details
