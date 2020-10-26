@@ -1,7 +1,7 @@
 entrada = input("Ingrese string: ") # Para el string con las notas
 suma = 0 # Variable para la sumatoria de notas
 mejor_materia = "" # Variable para guardar el nombre de la mejor nota
-mejor_nota = -1 # Menor nota
+mejor_nota = -1 # Mejor nota
 n_notas = 0 # Contador de notas
 # La logica del programa es obtener la materia y nota e ir removiendola de la entrada
 # Por lo tanto repetiremos el proceso hasta que se quiten todaslas materias y notas de la entrada

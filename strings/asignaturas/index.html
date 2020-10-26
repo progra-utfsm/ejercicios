@@ -1018,7 +1018,38 @@
                 
                 <h1 id="asignaturas">Asignaturas</h1>
 <p>Dado un <code>string</code> con el siguiente formato, pero del que desconocemos la cantidad de asignaturas: <code>"Progra=78;Mate=83;Física=68;Química=65"</code>. Escriba un programa que lea el string como entrada y calcule el promedio de calificaciones, indicando además la materia con mejor promedio. En caso de empate puede mostrar cualquiera de las que empatan.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese string: &quot;</span><span class="p">)</span> <span class="c1"># Para el string con las notas</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Variable para la sumatoria de notas</span>
+<span class="n">mejor_materia</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Variable para guardar el nombre de la mejor nota</span>
+<span class="n">mejor_nota</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># Mejor nota</span>
+<span class="n">n_notas</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de notas</span>
+<span class="c1"># La logica del programa es obtener la materia y nota e ir removiendola de la entrada</span>
+<span class="c1"># Por lo tanto repetiremos el proceso hasta que se quiten todaslas materias y notas de la entrada</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="s2">&quot;;&quot;</span> <span class="ow">in</span> <span class="n">entrada</span><span class="p">:</span> <span class="c1"># Si hay &#39;;&#39; en nuestra entrada podemos utilizar el metodo index para localizarlo</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span> <span class="c1"># Indice para separar materia</span>
+        <span class="n">materia_nota</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Obtenemos la materia con su nota</span>
+        <span class="c1"># Removemos la materia y nota que ya procesamos. </span>
+        <span class="c1"># Se incluye el &#39;;&#39; para que no nos moleste en el procesamiento</span>
+        <span class="n">entrada</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">materia_nota</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># Cuando a entrada no le queden &#39;;&#39;, estamos en la materia del final</span>
+        <span class="n">materia_nota</span> <span class="o">=</span> <span class="n">entrada</span> <span class="c1"># La informacion de la materia se encuentra en la ultima parte de la entrada</span>
+        <span class="n">entrada</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">materia_nota</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># Se remueve la informacion (aqui entrada deberia quedar vacia)</span>
+    <span class="c1"># Una vez tenemos el substring materia=nota, lo separamos utilizando &#39;=&#39;</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">materia_nota</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)</span> <span class="c1"># Indice para separar materia de la nota (utilizando el caracter &#39;=&#39;)</span>
+    <span class="n">materia</span> <span class="o">=</span> <span class="n">materia_nota</span><span class="p">[:</span><span class="n">j</span><span class="p">]</span> <span class="c1"># Obtenemos el nombre de la materia</span>
+    <span class="n">nota</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">materia_nota</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span> <span class="c1"># Obtenemos la nota y la convertimos a entero. El +1 es para evitar el &#39;=&#39;</span>
+    <span class="n">suma</span> <span class="o">+=</span> <span class="n">nota</span> <span class="c1"># Sumatoria de notas</span>
+    <span class="n">n_notas</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># contador notas</span>
+    <span class="c1"># Buscamos la major nota</span>
+    <span class="k">if</span> <span class="n">nota</span> <span class="o">&gt;</span> <span class="n">mejor_nota</span><span class="p">:</span>
+        <span class="n">mejor_materia</span> <span class="o">=</span> <span class="n">materia</span>
+        <span class="n">mejor_nota</span> <span class="o">=</span> <span class="n">nota</span>
+<span class="c1"># Calculamos el promedio</span>
+<span class="n">promedio</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">suma</span> <span class="o">/</span> <span class="n">n_notas</span><span class="p">))</span> 
+<span class="c1"># Mostramos lo solicitado </span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Promedio:&quot;</span><span class="p">,</span> <span class="n">promedio</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mejor materia:&quot;</span><span class="p">,</span> <span class="n">mejor_materia</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

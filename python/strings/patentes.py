@@ -6,8 +6,6 @@ def f(p):
 		x = p[3] 
 	return x
 
-# Pregunta 2
-# a)
 def tiene_restriccion(patente, catalitico, dia):
     if catalitico: # Si el auto es catalitico
         ultimo = f(patente) # Obtenemos la ultima letra
