@@ -1083,11 +1083,11 @@ que está más a la derecha:</p>
 <p>Tome en cuenta que el formato de la patente no tiene relación alguna con el tipo de auto: catalítico o no catalítico.
 Escriba la función <code>tiene_restriccion(patente, catalitico, dia)</code> que recibe como parámetros la patente de un vehículo particular, un valor booleano que es <code>True</code> si el auto es catalítico y <code>False</code> si no lo es, y el día de la semana en que el vehículo transitó (todo en mayúscula). La función debe retornar <code>True</code> si se le debe cursar un parte al vehículo o <code>False</code> en caso contrario. Puede suponer que todos los datos son correctos y se apegan a los formatos especificados.</p>
 <h2 id="ejemplo">Ejemplo</h2>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; tiene restriccion(&#39;CRTJ 32&#39;, True, &#39;LUNES&#39;) 
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; tiene_restriccion(&#39;CRTJ 32&#39;, True, &#39;LUNES&#39;) 
 False
-&gt;&gt;&gt; tiene restriccion ( &#39;ZZ−9999&#39;, True, &#39;VIERNES&#39;) 
+&gt;&gt;&gt; tiene_restriccion(&#39;ZZ−9999&#39;, True, &#39;VIERNES&#39;) 
 True
-&gt;&gt;&gt; tiene restriccion ( &#39;RX−2134&#39;, False , &#39;MIERCOLES&#39;) 
+&gt;&gt;&gt; tiene_restriccion(&#39;RX−2134&#39;, False , &#39;MIERCOLES&#39;) 
 True
 </code></pre></div>
 
