@@ -4,5 +4,5 @@ Escribir la función `palabra_mas_larga` que retorna un `string` con la palabra 
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/strings/password.py"
+    --8<-- "python/strings/larga.py"
     ```

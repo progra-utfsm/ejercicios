@@ -4,5 +4,5 @@ Dado un `string` con el siguiente formato, pero del que desconocemos la cantidad
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/strings/password.py"
+    --8<-- "python/strings/asignaturas.py"
     ```

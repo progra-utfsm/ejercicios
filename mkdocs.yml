@@ -67,6 +67,13 @@ nav:
     - Palabra más larga: strings/larga.md
     - Eliminar: strings/eliminar.md
     - Asignaturas: strings/asignaturas.md
+    - Patentes: strings/patentes.md
+  - Listas:
+    - Ejemplos: listas/ejemplos.md
+    - Desviación estándar: listas/desviacion.md
+    - Búsqueda secuencial: listas/busqueda_lineal.md
+    - Búsqueda binaria: listas/busqueda_binaria.md
+    - Merge: listas/merge.md
 markdown_extensions:
   - admonition
   - pymdownx.details
