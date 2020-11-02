@@ -1223,26 +1223,112 @@
 <li>Recorrer la lista y contamos cuántos números pares y cuántos impares hay, con <code>while</code> y con <code>for</code></li>
 <li>Usar <code>range</code> para generar los índices de una lista</li>
 </ul>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese N: &quot;</span><span class="p">))</span> <span class="c1"># Numero de elementos a guardar</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Lista para guardar los valores</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador para controlar los elementos</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span>
+    <span class="c1"># Entrada de valores</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese valor: &quot;</span><span class="p">))</span> 
+    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># Se agregan a la lista</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Ordenar lista</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+
+<span class="c1"># Contar pares/impares con while</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n_pares</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de pares</span>
+<span class="n">n_impares</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de impares</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">n_pares</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">n_impares</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># Mostrar resultado</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Pares:&quot;</span><span class="p">,</span> <span class="n">n_pares</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Impares:&quot;</span><span class="p">,</span> <span class="n">n_impares</span><span class="p">)</span>
+
+<span class="c1"># Contar pares/impares con for 1</span>
+<span class="n">n_pares</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de pares</span>
+<span class="n">n_impares</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de impares</span>
+<span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">n_pares</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">n_impares</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># Mostrar resultado</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Pares:&quot;</span><span class="p">,</span> <span class="n">n_pares</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Impares:&quot;</span><span class="p">,</span> <span class="n">n_impares</span><span class="p">)</span>
+
+<span class="c1"># Contar pares/impares con for 2</span>
+<span class="n">n_pares</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de pares</span>
+<span class="n">n_impares</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador de impares</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">n_pares</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">n_impares</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># Mostrar resultado</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Pares:&quot;</span><span class="p">,</span> <span class="n">n_pares</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Impares:&quot;</span><span class="p">,</span> <span class="n">n_impares</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
 <h2 id="paresimpares">Pares/impares</h2>
 <p>De una lista de números generar dos listas, una con los pares y otra con los impares</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">randint</span>
+<span class="c1"># Creacion de lista </span>
+<span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
+<span class="c1"># Estructuras para guardar los valores</span>
+<span class="n">pares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">impares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Se recorre la lista</span>
+<span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="c1"># Verificamos si el valor es para o impar y lo guardamos en la lista correspondiente</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">impares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<span class="c1"># Mostrar los valores</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Pares:&quot;</span><span class="p">,</span> <span class="n">pares</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Impares:&quot;</span><span class="p">,</span> <span class="n">impares</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
 <h2 id="palabras">Palabras</h2>
 <p>De una lista de palabras, encontrar la más larga</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">palabra_mas_larga</span><span class="p">(</span><span class="n">palabras</span><span class="p">):</span>
+    <span class="c1"># Consideramos un string vacio como la palabra mas larga</span>
+    <span class="n">max_pal</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="c1"># Recorremos la lista</span>
+    <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabras</span><span class="p">:</span>
+        <span class="c1"># Comparamos los largos de palabra</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_pal</span><span class="p">):</span>
+            <span class="n">max_pal</span> <span class="o">=</span> <span class="n">palabra</span> <span class="c1"># Asignamos la palabra mas larga que encontremos</span>
+    <span class="k">return</span> <span class="n">max_pal</span>
+
+<span class="n">palabras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;murcielago&quot;</span><span class="p">,</span> <span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="s2">&quot;chao&quot;</span><span class="p">,</span> <span class="s2">&quot;paralelepipedo&quot;</span><span class="p">,</span> <span class="s2">&quot;perro&quot;</span><span class="p">,</span> <span class="s2">&quot;gato&quot;</span><span class="p">,</span> <span class="s2">&quot;elefante&quot;</span><span class="p">]</span> <span class="c1"># Lista de ejemplo</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Palabra mas larga:&quot;</span><span class="p">,</span> <span class="n">palabra_mas_larga</span><span class="p">(</span><span class="n">palabras</span><span class="p">))</span> <span class="c1"># Resultado</span>
 </code></pre></div>
 
 </details>
 <h2 id="repetidos">Repetidos</h2>
 <p>Escribir una función que, dada una lista de números enteros entregada como parámetro, retorne una nueva 
-lista que mantenga elorden de la lista original pero no tenga repetidos.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+lista que mantenga el orden de la lista original pero no tenga repetidos.</p>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sin_repetidos</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="n">nueva</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Lista a retornar</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span> <span class="c1"># Recorremos la lista original</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nueva</span><span class="p">:</span> <span class="c1"># Si no encontramos el valor en la que retornaremos</span>
+            <span class="n">nueva</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="c1"># Agregamos el elemento</span>
+    <span class="k">return</span> <span class="n">nueva</span> 
+
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Lista original:&quot;</span><span class="p">,</span> <span class="n">lista</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sin repetidos:&quot;</span><span class="p">,</span> <span class="n">sin_repetidos</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
