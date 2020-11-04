@@ -1169,7 +1169,15 @@
 False
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">busqueda_secuencial</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">elemento</span><span class="p">):</span>
+    <span class="c1"># Recorremos el arreglo utilizando indices</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">elemento</span> <span class="o">==</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="c1"># Si encontramos el elemento</span>
+            <span class="k">return</span> <span class="n">i</span> <span class="c1"># Retornamos la posición</span>
+    <span class="k">return</span> <span class="bp">False</span> <span class="c1"># Si no lo encontramos, se retorna falso</span>
+<span class="c1"># Pruebas</span>
+<span class="k">print</span><span class="p">(</span><span class="n">busqueda_secuencial</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">19</span><span class="p">],</span> <span class="mi">31</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">busqueda_secuencial</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">19</span><span class="p">],</span> <span class="mi">13</span><span class="p">))</span>
 </code></pre></div>
 
 </details>

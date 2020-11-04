@@ -1162,7 +1162,7 @@
                 <h1 id="desviacion-estandar">Desviación estándar</h1>
 <p>La desviación estándar es una medida que se usa para cuantificar la variación o dispersión de un conjunto de datos numéricos.</p>
 <div class="arithmatex">\[\begin{equation}
-    \sigma = \sqrt{\sum_{i=1}^n \frac{(x_i-\mu)^2}{n-1}}
+    s = \sqrt{\dfrac{1}{n-1}\sum_{i=1}^n (x_i-\mu)^2}
 \end{equation}\]</div>
 <p>Donde <span class="arithmatex">\(n\)</span> es la cantidad de datos, <span class="arithmatex">\(\mu\)</span> es el promedio y los <span class="arithmatex">\(x_i\)</span> son cada uno de los datos. Esto significa que hay que hacerlo siguiendo estos pasos:</p>
 <ul>
@@ -1182,7 +1182,20 @@
 5.65685424949
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">desviacion_estandar</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+    <span class="c1"># Numero de elementos</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> 
+    <span class="c1"># Calculo del promedio</span>
+    <span class="n">promedio</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Lista para guardar las diferencias al cuadrado</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span> <span class="c1"># Se recorren los valores</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">val</span> <span class="o">-</span> <span class="n">promedio</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Se agregan las diferencias al cuadrado</span>
+    <span class="n">desv</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="c1"># Calculo de la desviacion</span>
+    <span class="k">return</span> <span class="n">desv</span>
+<span class="c1"># Pruebas</span>
+<span class="k">print</span><span class="p">(</span><span class="n">desviacion_estandar</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">desviacion_estandar</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">desviacion_estandar</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">]))</span>
 </code></pre></div>
 
 </details>
