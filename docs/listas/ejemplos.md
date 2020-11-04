@@ -49,12 +49,12 @@ De una lista de puntos: `[ [x0,y0], [x1,y1], ..., [xn,yn] ]` encontrar el que es
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/listas/puntos.py"
+    --8<-- "python/listas/puntos.py"
     ```
 
 Desafío: Ordenar la lista desde el punto más cercano al más lejano del origen
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/listas/puntos_2.py"
+    --8<-- "python/listas/puntos_2.py"
     ```

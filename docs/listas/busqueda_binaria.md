@@ -60,5 +60,5 @@ False
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/listas/busqueda_binaria.py"
+    --8<-- "python/listas/busqueda_binaria.py"
     ```

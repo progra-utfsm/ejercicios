@@ -17,5 +17,5 @@ aprovechar el orden antes que simplemente juntarlas y ordenarlas de nuevo.
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/listas/merge.py"
+    --8<-- "python/listas/merge.py"
     ```

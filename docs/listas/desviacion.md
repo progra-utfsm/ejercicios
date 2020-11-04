@@ -3,7 +3,7 @@
 La desviación estándar es una medida que se usa para cuantificar la variación o dispersión de un conjunto de datos numéricos.
 
 \begin{equation}
-    \sigma = \sqrt{\sum_{i=1}^n \frac{(x_i-\mu)^2}{n-1}}
+    s = \sqrt{\dfrac{1}{n-1}\sum_{i=1}^n (x_i-\mu)^2}
 \end{equation}
 
 Donde $n$ es la cantidad de datos, $\mu$ es el promedio y los $x_i$ son cada uno de los datos. Esto significa que hay que hacerlo siguiendo estos pasos:
@@ -29,5 +29,5 @@ Desarrolle la función `desviacion_estandar(valores)` cuyo parámetro `valores` 
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/listas/desviacion.py"
+    --8<-- "python/listas/desviacion.py"
     ```
