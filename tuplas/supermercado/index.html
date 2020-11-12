@@ -1242,15 +1242,164 @@
 13944
 &gt;&gt;&gt; producto_con_mas_ingresos(itemes, productos)
 &#39;Arroz&#39;
-&gt;&gt;&gt; cliente_que_mas_pago(itemes, productos, clientes)
+&gt;&gt;&gt; cliente_que_mas_pago(itemes, productos, clientes, ventas)
 &#39;Fulanita de Tal&#39;
-&gt;&gt;&gt; total_ventas_del_mes(2010, 10, itemes, productos)
+&gt;&gt;&gt; total_ventas_del_mes(2010, 10, itemes, productos, ventas)
 4160
 &gt;&gt;&gt; fecha_ultima_venta_producto(47470, itemes, ventas)
 (2010, 10, 13)
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">producto_mas_caro</span><span class="p">(</span><span class="n">productos</span><span class="p">):</span>
+    <span class="c1"># Variables para guardar el producto mas caro</span>
+    <span class="n">max_precio</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">producto</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="c1"># Recorremos la lista de tuplas y buscamos el producto de mayor precio</span>
+    <span class="k">for</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">,</span> <span class="n">unidades</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">precio</span> <span class="o">&gt;=</span> <span class="n">max_precio</span><span class="p">:</span>
+            <span class="n">max_precio</span> <span class="o">=</span> <span class="n">precio</span>
+            <span class="n">producto</span> <span class="o">=</span> <span class="n">nombre</span>
+    <span class="k">return</span> <span class="n">producto</span>
+
+<span class="k">def</span> <span class="nf">valor_total_bodega</span><span class="p">(</span><span class="n">productos</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Acumulador para guardar el valor total de la bodega</span>
+    <span class="c1"># Recorremos la estructura </span>
+    <span class="k">for</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">,</span> <span class="n">unidades</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">precio</span> <span class="o">*</span> <span class="n">unidades</span> <span class="c1"># multiplicamos la cantidad de unidades por el precio</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="k">def</span> <span class="nf">ingreso_total_por_ventas</span><span class="p">(</span><span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Variable para guardar el ingreso total</span>
+    <span class="k">for</span> <span class="n">boleta</span><span class="p">,</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">cantidad</span> <span class="ow">in</span> <span class="n">itemes</span><span class="p">:</span> <span class="c1"># Recorremos la estructura itemes donde se mantiene cada transaccion</span>
+        <span class="k">for</span> <span class="n">cod</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">,</span> <span class="n">unidades</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span> <span class="c1"># Recorremos los productos para obtener la info de cada producto</span>
+            <span class="k">if</span> <span class="n">codigo</span> <span class="o">==</span> <span class="n">cod</span><span class="p">:</span> <span class="c1"># Si corresponde el codigo de producto</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">cantidad</span> <span class="o">*</span> <span class="n">precio</span> <span class="c1"># Calculamos el ingreso asociado a dicho producto</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="k">def</span> <span class="nf">producto_con_mas_ingresos</span><span class="p">(</span><span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
+    <span class="n">nombres</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Creamos una lista para guardar los nombres de cada producto - [nombre_producto_1, nombre_producto_2, ... ]</span>
+    <span class="n">ingreso</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Otra lista para guardar el ingreso de cada producto - [ingreso_por_producto_1, ingreso_por_producto_2, ...]</span>
+    <span class="k">for</span> <span class="n">boleta</span><span class="p">,</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">cantidad</span> <span class="ow">in</span> <span class="n">itemes</span><span class="p">:</span> <span class="c1"># Recorremos la estructura itemes donde se mantiene cada transaccion</span>
+        <span class="k">for</span> <span class="n">cod</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">,</span> <span class="n">unidades</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span> <span class="c1"># Recorremos los productos para obtener la info de cada producto</span>
+            <span class="k">if</span> <span class="n">codigo</span> <span class="o">==</span> <span class="n">cod</span><span class="p">:</span> <span class="c1"># Si corresponde el codigo de producto</span>
+                <span class="c1"># Guardaremos la informacion del nombre del producto y el ingreso respectivo (listas inicializadas)</span>
+                <span class="k">if</span> <span class="n">nombre</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nombres</span><span class="p">:</span> <span class="c1"># Si todavia no agregamos el nombre del producto</span>
+                    <span class="n">nombres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="c1"># Se agrega</span>
+                    <span class="n">ingreso</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cantidad</span> <span class="o">*</span> <span class="n">precio</span><span class="p">)</span> <span class="c1"># Y se agrega tambien el ingreso asociado al producto</span>
+                <span class="k">else</span><span class="p">:</span> <span class="c1"># Si el nombre del producto ya habia sido agregado</span>
+                    <span class="n">pos</span> <span class="o">=</span> <span class="n">nombres</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="c1"># Obtenemos la posición </span>
+                    <span class="n">ingreso</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">+=</span> <span class="n">cantidad</span> <span class="o">*</span> <span class="n">precio</span> <span class="c1"># Actualizamos el ingreso mediante la posicion </span>
+    <span class="c1"># Buscamos ahora el mayor precio</span>
+    <span class="n">max_precio</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ingreso</span><span class="p">)</span> <span class="c1"># Buscamos el maximo en la lista de ingresos</span>
+    <span class="n">max_pos</span> <span class="o">=</span> <span class="n">ingreso</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_precio</span><span class="p">)</span> <span class="c1"># Encontramos la posicion de ese maximo</span>
+    <span class="k">return</span> <span class="n">nombres</span><span class="p">[</span><span class="n">max_pos</span><span class="p">]</span> <span class="c1"># Retornamos el nombre que se encuentra en la lista nombres utilizando la posicion respectiva</span>
+
+<span class="k">def</span> <span class="nf">cliente_que_mas_pago</span><span class="p">(</span><span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">,</span> <span class="n">clientes</span><span class="p">,</span> <span class="n">ventas</span><span class="p">):</span>
+    <span class="c1"># Primero obtenemos las boletas con sus respectivos gastos</span>
+    <span class="n">boletas</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Id de la boleta -  [id_boleta_1, id_boleta_2, ... ]</span>
+    <span class="n">totales</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Totales de cada boleta - [total_boleta_1, total_boleta_2, ... ]</span>
+    <span class="k">for</span> <span class="n">boleta</span><span class="p">,</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">cantidad</span> <span class="ow">in</span> <span class="n">itemes</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cod</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">precio</span><span class="p">,</span> <span class="n">unidades</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">codigo</span> <span class="o">==</span> <span class="n">cod</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">boleta</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">boletas</span><span class="p">:</span>
+                    <span class="n">boletas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">boleta</span><span class="p">)</span>
+                    <span class="n">totales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cantidad</span> <span class="o">*</span> <span class="n">precio</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pos</span> <span class="o">=</span> <span class="n">boletas</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">boleta</span><span class="p">)</span>
+                    <span class="n">totales</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">+=</span> <span class="n">cantidad</span> <span class="o">*</span> <span class="n">precio</span>
+    <span class="c1"># Ahora buscamos los clientes asociados a cada boleta para saber quien ha pagado mas</span>
+    <span class="n">nombres</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Para guardar los nombres de cada cliente - [nombre_cliente_1, nombre_cliente_2, ... ]</span>
+    <span class="n">pagos</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Para guardar el total pagado por cada cliente - [pago_cliente_1, pago_cliente_2, ... ]</span>
+    <span class="k">for</span> <span class="n">boleta</span><span class="p">,</span> <span class="n">fecha</span><span class="p">,</span> <span class="n">rut</span> <span class="ow">in</span> <span class="n">ventas</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">rut_cliente</span><span class="p">,</span> <span class="n">nombre_cliente</span> <span class="ow">in</span> <span class="n">clientes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rut</span> <span class="o">==</span> <span class="n">rut_cliente</span><span class="p">:</span> <span class="c1"># Filtramos por el rut respectivo</span>
+                <span class="n">pos_boleta</span> <span class="o">=</span> <span class="n">boletas</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">boleta</span><span class="p">)</span> <span class="c1"># Recuperamos el indice de la boleta </span>
+                <span class="k">if</span> <span class="n">nombre_cliente</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nombres</span><span class="p">:</span> <span class="c1"># Si todavia no existe el nombre del cliente</span>
+                    <span class="n">nombres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nombre_cliente</span><span class="p">)</span> <span class="c1"># Se agrega</span>
+                    <span class="n">pagos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">totales</span><span class="p">[</span><span class="n">pos_boleta</span><span class="p">])</span> <span class="c1"># Se agrega el pago asociado a esa boleta</span>
+                <span class="k">else</span><span class="p">:</span> <span class="c1"># Si ya existe el cliente</span>
+                    <span class="n">pos_nombre</span> <span class="o">=</span> <span class="n">nombres</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">nombre_cliente</span><span class="p">)</span> <span class="c1"># Lo buscamos</span>
+                    <span class="n">pagos</span><span class="p">[</span><span class="n">pos_nombre</span><span class="p">]</span> <span class="o">+=</span> <span class="n">totales</span><span class="p">[</span><span class="n">pos_boleta</span><span class="p">]</span> <span class="c1"># Sumamos el gasto de otra boleta al que ya teniamos</span>
+    <span class="c1"># Buscamos dentro de los pagos el mayor</span>
+    <span class="n">max_pago</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pagos</span><span class="p">)</span>
+    <span class="n">max_pos</span> <span class="o">=</span> <span class="n">pagos</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_pago</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nombres</span><span class="p">[</span><span class="n">max_pos</span><span class="p">]</span> <span class="c1"># Retornamos el nombre asociado a esa posicion</span>
+
+<span class="k">def</span> <span class="nf">total_ventas_del_mes</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">,</span> <span class="n">ventas</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Acumulador del total</span>
+    <span class="k">for</span> <span class="n">boleta</span><span class="p">,</span> <span class="n">fecha</span><span class="p">,</span> <span class="n">rut</span> <span class="ow">in</span> <span class="n">ventas</span><span class="p">:</span> <span class="c1"># Recorremos las ventas</span>
+        <span class="n">año</span><span class="p">,</span> <span class="n">mes</span><span class="p">,</span> <span class="n">dia</span> <span class="o">=</span> <span class="n">fecha</span> <span class="c1"># Desempaquetamos la fecha</span>
+        <span class="k">if</span> <span class="n">año</span> <span class="o">==</span> <span class="n">year</span> <span class="ow">and</span> <span class="n">mes</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span> <span class="c1"># Filtramos por fecha</span>
+            <span class="k">for</span> <span class="n">bol</span><span class="p">,</span> <span class="n">prod</span><span class="p">,</span> <span class="n">cant</span> <span class="ow">in</span> <span class="n">itemes</span><span class="p">:</span> <span class="c1"># Recorremos los itemes para encontrar las boletas de la fecha</span>
+                <span class="k">if</span> <span class="n">bol</span> <span class="o">==</span> <span class="n">boleta</span><span class="p">:</span> <span class="c1"># Filtramos por boleta</span>
+                    <span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span> <span class="c1"># buscamos la informacion del producto</span>
+                        <span class="n">id_producto</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">precio</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">producto</span> 
+                        <span class="k">if</span> <span class="n">id_producto</span> <span class="o">==</span> <span class="n">prod</span><span class="p">:</span> <span class="c1"># Si el producto corresponde a la boleta analizada</span>
+                            <span class="n">total</span> <span class="o">+=</span> <span class="n">cant</span> <span class="o">*</span> <span class="n">precio</span> <span class="c1"># Sumamos</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="k">def</span> <span class="nf">fecha_ultima_venta_producto</span><span class="p">(</span><span class="n">id_producto</span><span class="p">,</span> <span class="n">itemes</span><span class="p">,</span> <span class="n">ventas</span><span class="p">):</span>
+    <span class="n">fechas</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Lista para guardar las fechas donde se vendio el id_producto</span>
+    <span class="k">for</span> <span class="n">numero_boleta</span><span class="p">,</span> <span class="n">producto</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">itemes</span><span class="p">:</span> <span class="c1"># Recorremos los detalles de ventas</span>
+        <span class="k">if</span> <span class="n">id_producto</span> <span class="o">==</span> <span class="n">producto</span><span class="p">:</span> <span class="c1"># Si encontramos el producto</span>
+            <span class="k">for</span> <span class="n">nb</span><span class="p">,</span> <span class="n">fecha</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">ventas</span><span class="p">:</span> <span class="c1"># Recorremos la informacion de ventas para recuperar la fecha</span>
+                <span class="k">if</span> <span class="n">nb</span> <span class="o">==</span> <span class="n">numero_boleta</span><span class="p">:</span> <span class="c1"># Filtramos por el numero de boleta</span>
+                    <span class="n">fechas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fecha</span><span class="p">)</span> <span class="c1"># Agregamos la tupla con la fecha</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">fechas</span><span class="p">)</span> <span class="c1"># Retornamos la mayor tupla que corresponde a la ultima fecha c:</span>
+
+
+<span class="c1"># Estructuras #</span>
+<span class="n">productos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">41419</span><span class="p">,</span> <span class="s1">&#39;Fideos&#39;</span><span class="p">,</span>        <span class="mi">450</span><span class="p">,</span> <span class="mi">210</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">70717</span><span class="p">,</span> <span class="s1">&#39;Cuaderno&#39;</span><span class="p">,</span>      <span class="mi">900</span><span class="p">,</span> <span class="mi">119</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">78714</span><span class="p">,</span> <span class="s1">&#39;Jabon&#39;</span><span class="p">,</span>         <span class="mi">730</span><span class="p">,</span> <span class="mi">708</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">30877</span><span class="p">,</span> <span class="s1">&#39;Desodorante&#39;</span><span class="p">,</span>  <span class="mi">2190</span><span class="p">,</span>  <span class="mi">79</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">47470</span><span class="p">,</span> <span class="s1">&#39;Yogur&#39;</span><span class="p">,</span>          <span class="mi">99</span><span class="p">,</span> <span class="mi">832</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">50809</span><span class="p">,</span> <span class="s1">&#39;Palta&#39;</span><span class="p">,</span>         <span class="mi">500</span><span class="p">,</span>  <span class="mi">55</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">75466</span><span class="p">,</span> <span class="s1">&#39;Galletas&#39;</span><span class="p">,</span>      <span class="mi">235</span><span class="p">,</span>   <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">33692</span><span class="p">,</span> <span class="s1">&#39;Bebida&#39;</span><span class="p">,</span>        <span class="mi">700</span><span class="p">,</span>  <span class="mi">20</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">89148</span><span class="p">,</span> <span class="s1">&#39;Arroz&#39;</span><span class="p">,</span>         <span class="mi">900</span><span class="p">,</span> <span class="mi">121</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">66194</span><span class="p">,</span> <span class="s1">&#39;Lapiz&#39;</span><span class="p">,</span>         <span class="mi">120</span><span class="p">,</span> <span class="mi">900</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">15982</span><span class="p">,</span> <span class="s1">&#39;Vuvuzela&#39;</span><span class="p">,</span>    <span class="mi">12990</span><span class="p">,</span>  <span class="mi">40</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">41235</span><span class="p">,</span> <span class="s1">&#39;Chocolate&#39;</span><span class="p">,</span>    <span class="mi">3099</span><span class="p">,</span>  <span class="mi">48</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">clientes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;11652624-7&#39;</span><span class="p">,</span> <span class="s1">&#39;Perico Los Palotes&#39;</span><span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;8830268-0&#39;</span><span class="p">,</span> <span class="s1">&#39;Leonardo Farkas&#39;</span><span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;7547896-8&#39;</span><span class="p">,</span> <span class="s1">&#39;Fulanita de Tal&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">ventas</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>  <span class="s1">&#39;8830268-0&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="s1">&#39;11652624-7&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>  <span class="s1">&#39;7547896-8&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span>  <span class="s1">&#39;8830268-0&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span>  <span class="s1">&#39;7547896-8&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="s1">&#39;11652624-7&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">itemes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">89148</span><span class="p">,</span>  <span class="mi">3</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50809</span><span class="p">,</span>  <span class="mi">4</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">33692</span><span class="p">,</span>  <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">47470</span><span class="p">,</span>  <span class="mi">6</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">30877</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">89148</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">75466</span><span class="p">,</span>  <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">89148</span><span class="p">,</span>  <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">47470</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">41419</span><span class="p">,</span>  <span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># Pruebas #</span>
+<span class="k">print</span><span class="p">(</span><span class="n">producto_mas_caro</span><span class="p">(</span><span class="n">productos</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">valor_total_bodega</span><span class="p">(</span><span class="n">productos</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ingreso_total_por_ventas</span><span class="p">(</span><span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">producto_con_mas_ingresos</span><span class="p">(</span><span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cliente_que_mas_pago</span><span class="p">(</span><span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">,</span> <span class="n">clientes</span><span class="p">,</span> <span class="n">ventas</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">total_ventas_del_mes</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">itemes</span><span class="p">,</span> <span class="n">productos</span><span class="p">,</span> <span class="n">ventas</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fecha_ultima_venta_producto</span><span class="p">(</span><span class="mi">47470</span><span class="p">,</span> <span class="n">itemes</span><span class="p">,</span> <span class="n">ventas</span><span class="p">))</span>
 </code></pre></div>
 
 </details>

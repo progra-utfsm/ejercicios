@@ -1390,7 +1390,68 @@ Si las rectas son paralelas, la función debe retornar <code>None</code>.</p>
 (1.0, 3.0)
 </code></pre></div>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Pregunta 1</span>
+<span class="k">def</span> <span class="nf">punto_en_recta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span> <span class="c1"># Desempaquetar punto (x, y)</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">r</span> <span class="c1"># Desempaquetar recta (pendiente, intercepto)</span>
+    <span class="c1"># Si un punto pertenece a la recta se cumple que x * m + b = y</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">==</span> <span class="n">x</span> <span class="o">*</span> <span class="n">m</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Pregunta 2</span>
+<span class="k">def</span> <span class="nf">son_paralelas</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span>
+    <span class="c1"># Desempaquetar rectas</span>
+    <span class="n">m1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">r1</span> 
+    <span class="n">m2</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">r2</span>
+    <span class="c1"># Dos rectas son paralelas si tienen la misma pendiente y distinto intercepto (comentario en clases)</span>
+    <span class="k">return</span> <span class="n">m1</span> <span class="o">==</span> <span class="n">m2</span> <span class="ow">and</span> <span class="n">b1</span> <span class="o">!=</span> <span class="n">b2</span>
+
+<span class="c1"># Pregunta 3</span>
+<span class="k">def</span> <span class="nf">recta_que_pasa_por</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+    <span class="c1"># Desempaquetar puntos</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">p1</span> 
+    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">p2</span>
+    <span class="c1"># Pendiente </span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="c1"># Intercepto, basta despejar la ecuacion de la recta y = mx + b =&gt; b = y - mx</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">m</span> <span class="o">*</span><span class="n">x1</span> <span class="c1"># Se puede hacer con x2, y2 tambien</span>
+    <span class="n">recta</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Nueva recta</span>
+    <span class="k">return</span> <span class="n">recta</span>
+
+<span class="c1"># Pregunta 4</span>
+<span class="k">def</span> <span class="nf">punto_de_interseccion</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">son_paralelas</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="c1"># Rectas paralelas</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Desempaquetar rectas</span>
+        <span class="n">m1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">r1</span>
+        <span class="n">m2</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">r2</span>
+        <span class="c1"># Se debe buscar el punto (x,y) igualando ambas ecuaciones</span>
+        <span class="c1"># m1 * x + b1 = m2 * x + b2 </span>
+        <span class="c1"># =&gt; x = (b2 - b1) / (m1 - m2)  </span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">b2</span> <span class="o">-</span> <span class="n">b1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span><span class="p">)</span> 
+        <span class="c1"># y se puede obtener evaluando x en cualquiera de las rectas</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Pruebas #</span>
+<span class="c1"># Pregunta 1</span>
+<span class="n">recta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># esta es la recta y = 2x - 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">punto_en_recta</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">recta</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">punto_en_recta</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">recta</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">punto_en_recta</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">recta</span><span class="p">))</span>
+
+<span class="c1"># pregunta 3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">recta_que_pasa_por</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="c1"># Verificacion sugerida</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">recta_que_pasa_por</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">punto_en_recta</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="ow">and</span> <span class="n">punto_en_recta</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+
+<span class="c1"># Pregunta 4</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">punto_de_interseccion</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
