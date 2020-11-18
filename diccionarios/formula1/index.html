@@ -1310,7 +1310,33 @@
 <li>Imprimir los integrantes de un equipo particular.</li>
 <li>¿Cómo saber a qué equipo pertenece un piloto en particular?</li>
 </ol>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">F1</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;Mercedes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Lewis Hamilton&#39;</span><span class="p">,</span> <span class="s1">&#39;Valtteri Bottas&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Ferrari&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Sebastian Vettel&#39;</span><span class="p">,</span> <span class="s1">&#39;Charles Leclerc&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Red Bull Racing&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Max Verstappen&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander Albon&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;McLaren&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Carlos Sainz&#39;</span><span class="p">,</span> <span class="s1">&#39;Lando Norris&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Renault&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Daniel Ricciardo&#39;</span><span class="p">,</span> <span class="s1">&#39;Esteban Ocon&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;AlphaTauri&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Pierre Gasly&#39;</span><span class="p">,</span> <span class="s1">&#39;Daniil Kvyat&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Racing Point&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Sergio Pérez&#39;</span><span class="p">,</span> <span class="s1">&#39;Lance Stroll&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Alfa Romeo Racing&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Kimi Räikkönen&#39;</span><span class="p">,</span> <span class="s1">&#39;Antonio Giovinazzi&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Haas F1 Team&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Romain Grosjean&#39;</span><span class="p">,</span> <span class="s1">&#39;Kevin Magnussen&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Williams&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;George Russell&#39;</span><span class="p">,</span> <span class="s1">&#39;Nicholas Latifi&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Preguntas #</span>
+<span class="c1"># 1</span>
+<span class="n">equipo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese el equipo: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">equipo</span> <span class="ow">in</span> <span class="n">F1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Los integrantes del equipo&quot;</span><span class="p">,</span> <span class="n">equipo</span><span class="p">,</span> <span class="s2">&quot;son: &quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">integrante</span> <span class="ow">in</span> <span class="n">F1</span><span class="p">[</span><span class="n">equipo</span><span class="p">]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;- &quot;</span><span class="p">,</span> <span class="n">integrante</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;El equipo no existe&quot;</span><span class="p">)</span>
+<span class="c1"># 2</span>
+<span class="n">integrante</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese integrante: &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">equipo</span> <span class="ow">in</span> <span class="n">F1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">integrante</span> <span class="ow">in</span> <span class="n">F1</span><span class="p">[</span><span class="n">equipo</span><span class="p">]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">integrante</span><span class="p">,</span> <span class="s2">&quot;pertenece a&quot;</span><span class="p">,</span> <span class="n">equipo</span><span class="p">)</span>
 </code></pre></div>
 
 </details>

@@ -1308,7 +1308,38 @@
 <li>Imprimir los planetas en orden descendente de diámetro, es decir, del más grande al más pequeño.</li>
 <li>Determinar el planeta con el menor período de rotación. </li>
 </ol>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Datos #</span>
+<span class="n">planetas</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;Mercurio&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">57910000</span><span class="p">,</span> <span class="mi">4880</span><span class="p">,</span> <span class="mf">0.241</span><span class="p">,</span> <span class="mf">58.6</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">),</span>
+   <span class="s1">&#39;Venus&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">108200000</span><span class="p">,</span><span class="mi">12000</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">),</span>
+   <span class="s1">&#39;Tierra&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">149600000</span><span class="p">,</span> <span class="mi">12756</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+   <span class="s1">&#39;Marte&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">227940000</span><span class="p">,</span> <span class="mi">6794</span><span class="p">,</span> <span class="mf">1.52</span><span class="p">,</span> <span class="mf">1.03</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">),</span>
+   <span class="s1">&#39;Júpiter&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">778833000</span><span class="p">,</span> <span class="mi">142984</span><span class="p">,</span> <span class="mf">5.20</span><span class="p">,</span> <span class="mf">0.414</span><span class="p">,</span> <span class="mi">318</span><span class="p">),</span>
+   <span class="s1">&#39;Saturno&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1429400000</span><span class="p">,</span> <span class="mi">120536</span><span class="p">,</span> <span class="mf">9.55</span><span class="p">,</span> <span class="mf">0.426</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span>
+   <span class="s1">&#39;Urano&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">2870990000</span><span class="p">,</span> <span class="mi">51118</span><span class="p">,</span> <span class="mf">19.22</span><span class="p">,</span> <span class="mf">0.718</span><span class="p">,</span> <span class="mf">14.16</span><span class="p">),</span>
+   <span class="s1">&#39;Neptuno&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">4504300000</span><span class="p">,</span> <span class="mi">49492</span><span class="p">,</span> <span class="mf">30.66</span><span class="p">,</span> <span class="mf">0.6745</span><span class="p">,</span> <span class="mf">17.2</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Preguntas #</span>
+<span class="c1"># 1</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Se crea una lista de tuplas para ordenar utilizando el criterio de tuplas</span>
+<span class="k">for</span> <span class="n">planeta</span> <span class="ow">in</span> <span class="n">planetas</span><span class="p">:</span>
+   <span class="n">_</span><span class="p">,</span> <span class="n">diametro</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">planetas</span><span class="p">[</span><span class="n">planeta</span><span class="p">]</span>
+   <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">diametro</span><span class="p">,</span> <span class="n">planeta</span><span class="p">))</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Orden ascendente</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># Orden descendente</span>
+<span class="c1"># Mostrar los planetas</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">planeta</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">planeta</span><span class="p">)</span>
+
+<span class="c1"># 2</span>
+<span class="n">lista2</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Misma idea anterior, pero guardando la informacion de rotacion</span>
+<span class="k">for</span> <span class="n">planeta</span> <span class="ow">in</span> <span class="n">planetas</span><span class="p">:</span>
+   <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">rotacion</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">planetas</span><span class="p">[</span><span class="n">planeta</span><span class="p">]</span>
+   <span class="n">lista2</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rotacion</span><span class="p">,</span> <span class="n">planeta</span><span class="p">))</span>
+<span class="n">lista2</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Orden ascendente</span>
+<span class="c1"># Mostrar el planeta </span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Planeta con menor período de rotación:&quot;</span><span class="p">,</span> <span class="n">lista2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div>
 
 </details>

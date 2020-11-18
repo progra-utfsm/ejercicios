@@ -150,21 +150,23 @@ sinonimos = {
 
 # Preguntas #
 # 1
+# Texto de ejemplo
 texto = 'En la penumbra vio su silueta con anteojos y un bonito cabello y sintió miedo y ganas de volver a su casa'
-texto += ' '
-modificado = ''
-palabra = ''
+texto += ' ' # Se agrega un espacio extra para simplificar la busqueda de palabras
+modificado = '' # Aca guardaremos el texto modificado
+palabra = '' # Aqui guardaremos las palabras para cambiar por su sinonimo
 i = 0
-while i < len(texto):
-    if texto[i] == ' ':
-        if palabra in sinonimos:
-            modificado += sinonimos[palabra] + ' '
-        else:
-            modificado += palabra + ' '
+while i < len(texto): # Recorremos el texto por indice
+    if texto[i] == ' ': # Buscamos el espacio
+        # Cuando encontremos el espacio, ya tenemos una palabra para buscar su sinonimo
+        if palabra in sinonimos:  # Si la palabra tiene sinonimo
+            modificado += sinonimos[palabra] + ' ' # Reemplazamos el texto
+        else: # Si no tiene sinonimo
+            modificado += palabra + ' ' # Mantenemos el texto con la palabra tal cual estaba en un principio
         palabra = ''
-    else:
+    else: # Mientras no sea espacio, simplemente concatenamos los caracteres a palabra
         palabra += texto[i]
-    i += 1
+    i += 1 # Indice del texto
 print(modificado)
 # 2
 sinonimos_2 = {} # Simplemente cambiamos la llave por el valor del primero diccionario

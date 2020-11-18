@@ -1354,7 +1354,61 @@
 </code></pre></div>
 </td></tr></table>
 
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="c1"># Datos #</span>
+<span class="n">verdulería</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;Brócoli&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">900</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+   <span class="s1">&#39;Pimentón&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">800</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+   <span class="s1">&#39;Limones&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="s1">&#39;Lechuga&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">700</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+   <span class="s1">&#39;Palta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3800</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+   <span class="s1">&#39;Tomates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+   <span class="s1">&#39;Pepino&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="s1">&#39;Zanahorias&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">700</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+   <span class="s1">&#39;Zapallo italiano&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">450</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+   <span class="s1">&#39;Papas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">950</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+   <span class="s1">&#39;Frutillas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3400</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+   <span class="s1">&#39;Peras&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="s1">&#39;Manzanas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1600</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+   <span class="s1">&#39;Naranjas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1800</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+   <span class="s1">&#39;Plátanos&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1100</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+   <span class="s1">&#39;Kiwis&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2800</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="s1">&#39;Mandarinas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2200</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Preguntas #</span>
+<span class="c1"># 1, 2 y 3</span>
+<span class="n">producto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese nombre de producto: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">verdulería</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;El precio de&quot;</span><span class="p">,</span> <span class="n">producto</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="n">verdulería</span><span class="p">[</span><span class="n">producto</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;y su stock es&quot;</span><span class="p">,</span> <span class="n">verdulería</span><span class="p">[</span><span class="n">producto</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;No hay stock del producto&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4 </span>
+<span class="n">mayor_precio</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">mas_caro</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">verdulería</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">verdulería</span><span class="p">[</span><span class="n">producto</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">mayor_precio</span><span class="p">:</span>
+        <span class="n">mayor_precio</span> <span class="o">=</span> <span class="n">verdulería</span><span class="p">[</span><span class="n">producto</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">mas_caro</span> <span class="o">=</span> <span class="n">producto</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;El producto más caro es: &quot;</span><span class="p">,</span> <span class="n">mas_caro</span><span class="p">)</span>
+
+<span class="c1"># 5 </span>
+<span class="n">compras</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Manzanas&#39;</span><span class="p">,</span> <span class="s1">&#39;Mangos&#39;</span><span class="p">,</span> <span class="s1">&#39;Papas&#39;</span><span class="p">,</span> <span class="s1">&#39;Tomates&#39;</span><span class="p">,</span> <span class="s1">&#39;Pepino&#39;</span><span class="p">,</span> <span class="s1">&#39;Pimentón&#39;</span><span class="p">,</span> <span class="s1">&#39;Plátanos&#39;</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">bolsa</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">compras</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">verdulería</span><span class="p">:</span>
+        <span class="n">lista</span> <span class="o">=</span> <span class="n">verdulería</span><span class="p">[</span><span class="n">elemento</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">bolsa</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No hay&#39;</span><span class="p">,</span> <span class="n">elemento</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Negocio no vende&#39;</span><span class="p">,</span> <span class="n">elemento</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">bolsa</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
