@@ -74,6 +74,16 @@ nav:
     - Búsqueda secuencial: listas/busqueda_lineal.md
     - Búsqueda binaria: listas/busqueda_binaria.md
     - Merge: listas/merge.md
+  - Tuplas:
+    - Rectas: tuplas/rectas.md
+    - Supermercado: tuplas/supermercado.md
+  - Diccionarios:
+    - Final Copa América: diccionarios/copa.md
+    - Fórmula 1: diccionarios/formula1.md
+    - Frutas y verduras: diccionarios/frutas-verduras.md
+    - Números: diccionarios/numeros.md
+    - Planetas: diccionarios/planetas.md
+    - Sinónimos: diccionarios/sinonimos.md
 markdown_extensions:
   - admonition
   - pymdownx.details
