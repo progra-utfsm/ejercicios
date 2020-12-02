@@ -1421,7 +1421,7 @@ cinco dígitos, y no incluyen el dígito después de la raya.</p>
     <span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;donantes.txt&quot;</span><span class="p">)</span>
     <span class="n">monto</span> <span class="o">=</span> <span class="mi">0</span> 
     <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span>
-        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">rut</span><span class="p">:</span> <span class="c1"># Si el rut es el que buscamos</span>
             <span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Cerramos el archivo</span>
             <span class="n">monto</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Guardamos el monto</span>
@@ -1436,7 +1436,7 @@ cinco dígitos, y no incluyen el dígito después de la raya.</p>
 
     <span class="c1"># Primero hay que leer el archivo</span>
     <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span>
-        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">rut</span><span class="p">:</span> <span class="c1"># Si no es el rut solicitado </span>
             <span class="n">lineas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span> <span class="c1"># Guardamos la linea completa</span>
     <span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -1449,11 +1449,11 @@ cinco dígitos, y no incluyen el dígito después de la raya.</p>
 
 <span class="k">def</span> <span class="nf">agregar</span><span class="p">(</span><span class="n">rut</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">monto</span><span class="p">):</span>
     <span class="n">info</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-    <span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rut</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">monto</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span> <span class="c1"># Agregamos al nuevo donante</span>
+    <span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rut</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">monto</span><span class="p">))</span> <span class="c1"># Agregamos al nuevo donante</span>
     <span class="c1"># Leer el archivo</span>
     <span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;donantes.txt&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span> <span class="c1"># Leer cada linea</span>
-        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> 
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> 
         <span class="c1"># Agregamos a los otros donantes en una lista de tuplas</span>
         <span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">datos</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> 
     <span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -1461,7 +1461,7 @@ cinco dígitos, y no incluyen el dígito después de la raya.</p>
 
     <span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;donantes.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">rut</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">monto</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="c1"># Recorremos la lista con informacion</span>
-        <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;{0},{1},{2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rut</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">monto</span><span class="p">))</span> <span class="c1"># Escribimos en el nuevo archivo</span>
+        <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;{0},{1},{2}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rut</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">monto</span><span class="p">))</span> <span class="c1"># Escribimos en el nuevo archivo</span>
     <span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 

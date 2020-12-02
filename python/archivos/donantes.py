@@ -17,7 +17,7 @@ def monto(rut):
     archivo = open("donantes.txt")
     monto = 0 
     for linea in archivo:
-        datos = linea.split(",")
+        datos = linea.strip().split(",")
         if datos[0] == rut: # Si el rut es el que buscamos
             archivo.close() # Cerramos el archivo
             monto = int(datos[-1]) # Guardamos el monto
@@ -32,7 +32,7 @@ def eliminar(rut):
 
     # Primero hay que leer el archivo
     for linea in archivo:
-        datos = linea.split(",")
+        datos = linea.strip().split(",")
         if datos[0] != rut: # Si no es el rut solicitado 
             lineas.append(linea) # Guardamos la linea completa
     archivo.close()
@@ -45,11 +45,11 @@ def eliminar(rut):
 
 def agregar(rut, nombre, monto):
     info = list()
-    info.append((rut, nombre, monto + "\n")) # Agregamos al nuevo donante
+    info.append((rut, nombre, monto)) # Agregamos al nuevo donante
     # Leer el archivo
     archivo = open("donantes.txt")
     for linea in archivo: # Leer cada linea
-        datos = linea.split(",") 
+        datos = linea.strip().split(",") 
         # Agregamos a los otros donantes en una lista de tuplas
         info.append((int(datos[0]), datos[1], datos[2])) 
     archivo.close()
@@ -57,7 +57,7 @@ def agregar(rut, nombre, monto):
 
     archivo = open("donantes.txt", "w")
     for rut, nombre, monto in info: # Recorremos la lista con informacion
-        archivo.write("{0},{1},{2}".format(rut, nombre, monto)) # Escribimos en el nuevo archivo
+        archivo.write("{0},{1},{2}\n".format(rut, nombre, monto)) # Escribimos en el nuevo archivo
     archivo.close()
   
 

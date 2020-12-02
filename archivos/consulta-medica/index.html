@@ -1353,7 +1353,7 @@
                 
                 
                 <h1 id="consulta-medica">Consulta médica</h1>
-<p>Una consulta médica tiene un archivo pacientes.txt con los datos personales de sus pacientes. 
+<p>Una consulta médica tiene un archivo <code>pacientes.txt</code> con los datos personales de sus pacientes. 
 Cada línea del archivo tiene el rut, el nombre y la edad de un paciente, separados por un símbolo <code>:</code>. </p>
 <p>Así se ve el archivo:</p>
 <details class="info"><summary><code>pacientes.txt</code></summary><div class="highlight"><pre><span></span><code>12067539-7:Anastasia López:32
@@ -1468,7 +1468,7 @@ de la atención, también separados por <code>:</code>. El archivo se ve así:</
     <span class="n">atenciones</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atenciones.txt&quot;</span><span class="p">)</span>
     <span class="n">costo</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Variable para guardar el costo</span>
     <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">atenciones</span><span class="p">:</span>
-        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span> <span class="c1"># Separamos los datos</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span> <span class="c1"># Separamos los datos</span>
         <span class="k">if</span> <span class="n">rut</span> <span class="o">==</span> <span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># Si es el rut que se consulta</span>
             <span class="n">costo</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Sumamos el costo</span>
     <span class="n">atenciones</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -1482,7 +1482,7 @@ de la atención, también separados por <code>:</code>. El archivo se ve así:</
     <span class="n">nombres</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># Recorremos las atenciones para obtener los ruts </span>
     <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">atenciones</span><span class="p">:</span> 
-        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
         <span class="n">fecha</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span> <span class="c1"># Separamos las fechas</span>
         <span class="c1"># Comparamos si corresponde a la fecha</span>
         <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">fecha</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">dia</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">fecha</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">mes</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">fecha</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="n">año</span><span class="p">:</span>
@@ -1490,7 +1490,7 @@ de la atención, también separados por <code>:</code>. El archivo se ve así:</
                 <span class="n">ruts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Guardamos el rut</span>
     <span class="c1"># Recorremos los pacientes </span>
     <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">pacientes</span><span class="p">:</span> 
-        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
         <span class="c1"># Revisamos si el rut del paciente esta en la estructura donde guardamos los ruts</span>
         <span class="k">if</span> <span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">ruts</span><span class="p">:</span> 
             <span class="n">nombres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -1529,10 +1529,18 @@ de la atención, también separados por <code>:</code>. El archivo se ve así:</
             <span class="n">ganancias</span><span class="p">[</span><span class="n">mes_año</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">ganancias</span><span class="p">[</span><span class="n">mes_año</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
     <span class="n">atenciones</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c1"># Ordenemos la informacion por fecha utilizando una lista de tuplas</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># [((año, mes), ganancia), ...] asi podemos ordenar la estructura rapidamente</span>
+    <span class="k">for</span> <span class="n">mes_año</span> <span class="ow">in</span> <span class="n">ganancias</span><span class="p">:</span>
+        <span class="n">fecha</span> <span class="o">=</span> <span class="n">mes_año</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span> <span class="c1"># Separamos mes y año</span>
+        <span class="n">tupla</span> <span class="o">=</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fecha</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">fecha</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">ganancias</span><span class="p">[</span><span class="n">mes_año</span><span class="p">])</span> <span class="c1"># Creamos la lista de tuplas</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tupla</span><span class="p">)</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Ordenara de forma ascendente por la fecha</span>
     <span class="n">gan</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ganancias.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
     <span class="c1"># Guardamos la informacion en el archivo</span>
-    <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ganancias</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">gan</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;{0}:{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">fecha</span><span class="p">,</span> <span class="n">ganancia</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+        <span class="n">año</span><span class="p">,</span> <span class="n">mes</span> <span class="o">=</span> <span class="n">fecha</span>
+        <span class="n">gan</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;{}-{}:{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mes</span><span class="p">,</span> <span class="n">año</span><span class="p">,</span> <span class="n">ganancia</span><span class="p">))</span>
     <span class="n">gan</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># Pruebas</span>

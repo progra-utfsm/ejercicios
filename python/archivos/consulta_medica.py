@@ -3,7 +3,7 @@ def costo_total_paciente(rut):
     atenciones = open("atenciones.txt")
     costo = 0 # Variable para guardar el costo
     for linea in atenciones:
-        datos = linea.split(":") # Separamos los datos
+        datos = linea.strip().split(":") # Separamos los datos
         if rut == datos[0]: # Si es el rut que se consulta
             costo += int(datos[2]) # Sumamos el costo
     atenciones.close()
@@ -17,7 +17,7 @@ def pacientes_dia(dia, mes, año):
     nombres = []
     # Recorremos las atenciones para obtener los ruts 
     for linea in atenciones: 
-        datos = linea.split(":")
+        datos = linea.strip().split(":")
         fecha = datos[1].split("-") # Separamos las fechas
         # Comparamos si corresponde a la fecha
         if int(fecha[0]) == dia and int(fecha[1]) == mes and int(fecha[2]) == año:
@@ -25,7 +25,7 @@ def pacientes_dia(dia, mes, año):
                 ruts.append(datos[0]) # Guardamos el rut
     # Recorremos los pacientes 
     for linea in pacientes: 
-        datos = linea.split(":")
+        datos = linea.strip().split(":")
         # Revisamos si el rut del paciente esta en la estructura donde guardamos los ruts
         if datos[0] in ruts: 
             nombres.append(datos[1])
@@ -64,10 +64,18 @@ def ganancias_por_mes():
             ganancias[mes_año] = 0
         ganancias[mes_año] += int(datos[2])
     atenciones.close()
+    # Ordenemos la informacion por fecha utilizando una lista de tuplas
+    lista = [] # [((año, mes), ganancia), ...] asi podemos ordenar la estructura rapidamente
+    for mes_año in ganancias:
+        fecha = mes_año.split("-") # Separamos mes y año
+        tupla = ((int(fecha[1]), int(fecha[0])), ganancias[mes_año]) # Creamos la lista de tuplas
+        lista.append(tupla)
+    lista.sort() # Ordenara de forma ascendente por la fecha
     gan = open("ganancias.txt", "w")
     # Guardamos la informacion en el archivo
-    for f, m in ganancias.items():
-        gan.write("{0}:{1}\n".format(f, m))
+    for fecha, ganancia in lista:
+        año, mes = fecha
+        gan.write("{}-{}:{}\n".format(mes, año, ganancia))
     gan.close()
 
 # Pruebas
