@@ -25,5 +25,5 @@ Los problemas son los siguientes:
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/archivos/donantes.py"
+    --8<-- "python/archivos/donantes.py"
     ```

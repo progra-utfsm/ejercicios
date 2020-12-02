@@ -1,5 +1,5 @@
 # Consulta médica
-Una consulta médica tiene un archivo pacientes.txt con los datos personales de sus pacientes. 
+Una consulta médica tiene un archivo `pacientes.txt` con los datos personales de sus pacientes. 
 Cada línea del archivo tiene el rut, el nombre y la edad de un paciente, separados por un símbolo `:`. 
 
 Así se ve el archivo:
@@ -55,5 +55,5 @@ Note que las fechas están ordenadas de menos a más reciente, ya que las nuevas
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/archivos/consulta_medica.py"
+    --8<-- "python/archivos/consulta_medica.py"
     ```

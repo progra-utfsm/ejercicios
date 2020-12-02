@@ -84,6 +84,9 @@ nav:
     - Números: diccionarios/numeros.md
     - Planetas: diccionarios/planetas.md
     - Sinónimos: diccionarios/sinonimos.md
+  - Archivos:
+    - Donantes: archivos/donantes.md
+    - Consulta médica: archivos/consulta-medica.md
 markdown_extensions:
   - admonition
   - pymdownx.details
