@@ -74,6 +74,7 @@ nav:
     - Búsqueda secuencial: listas/busqueda_lineal.md
     - Búsqueda binaria: listas/busqueda_binaria.md
     - Merge: listas/merge.md
+    - Cine: listas/cine.md
   - Tuplas:
     - Rectas: tuplas/rectas.md
     - Supermercado: tuplas/supermercado.md
