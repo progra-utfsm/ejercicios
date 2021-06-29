@@ -85,6 +85,9 @@ nav:
     - Números: diccionarios/numeros.md
     - Planetas: diccionarios/planetas.md
     - Sinónimos: diccionarios/sinonimos.md
+    - Conductores: diccionarios/conductores.md
+    - Viajes: diccionarios/viajes.md
+    - Delitos: diccionarios/delitos.md
   - Archivos:
     - Donantes: archivos/donantes.md
     - Consulta médica: archivos/consulta-medica.md
