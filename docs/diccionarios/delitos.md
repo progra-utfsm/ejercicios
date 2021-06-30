@@ -39,8 +39,6 @@ y el año. Esta función debe entregar el nombre del mes del año en el que ocur
 ```
 
 ???danger "Solución"
-    <!--
     ```python
     --8<-- "python/diccionarios/viajes.py"
     ```
-    -->

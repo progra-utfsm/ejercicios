@@ -13,7 +13,7 @@ conductores = {
 
 a) Desarrolle la función `agrega_conductor(conductores, nuevo_conductor)` donde
 `nuevo_conductor` corresponde a una tupla con los siguientes datos (`username`,
-`nombre_completo`, `puntaje`, (`marca`, `modelo`, `patente`)). Por ejemplo;
+`nombre_completo`, `puntaje`, (`marca`, `modelo`)). Por ejemplo;
 ```python
 >>> agrega_conductor(conductores,('fsoto', 'Fabiola Soto', 4.4, ('Peugeot', '308'))
 True
@@ -38,8 +38,6 @@ Por ejemplo;
 ```
 
 ???danger "Solución"
-    <!--
     ```python
     --8<-- "python/diccionarios/conductores.py"
     ```
-    -->

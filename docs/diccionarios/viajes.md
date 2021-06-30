@@ -21,8 +21,6 @@ demorado los viajes hacia ellas (en cualquier orden).
 ```
 
 ???danger "Solución"
-    <!--
     ```python
     --8<-- "python/diccionarios/viajes.py"
     ```
-    -->
