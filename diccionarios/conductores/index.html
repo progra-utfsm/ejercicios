@@ -1412,7 +1412,7 @@
 
 <p>a) Desarrolle la función <code>agrega_conductor(conductores, nuevo_conductor)</code> donde
 <code>nuevo_conductor</code> corresponde a una tupla con los siguientes datos (<code>username</code>,
-<code>nombre_completo</code>, <code>puntaje</code>, (<code>marca</code>, <code>modelo</code>, <code>patente</code>)). Por ejemplo;
+<code>nombre_completo</code>, <code>puntaje</code>, (<code>marca</code>, <code>modelo</code>)). Por ejemplo;
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">agrega_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,(</span><span class="s1">&#39;fsoto&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="s1">&#39;308&#39;</span><span class="p">))</span>
 <span class="bp">True</span>
 </code></pre></div>
@@ -1431,8 +1431,7 @@ Por ejemplo;
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ranking</span><span class="p">(</span><span class="n">conductores</span><span class="p">)</span>
 <span class="p">[(</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)]</span>
 </code></pre></div></p>
-<details class="danger"><summary>Solución</summary><!--
-<div class="highlight"><pre><span></span><code><span class="n">conductores</span> <span class="o">=</span> <span class="p">{</span>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">conductores</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;azambrano&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Elantra&#39;</span><span class="p">)),</span>
     <span class="s1">&#39;jojeda&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Accent&#39;</span><span class="p">)),</span>
     <span class="c1"># ...</span>
@@ -1465,7 +1464,6 @@ Por ejemplo;
         <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nombre</span><span class="p">,</span> <span class="n">puntaje</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">final</span>
 </code></pre></div>
--->
 
 </details>
                 
@@ -1523,7 +1521,7 @@ Por ejemplo;
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 - Progra UTFSM
+            Copyright &copy; 2021 - Progra UTFSM
           </div>
         
         Made with
