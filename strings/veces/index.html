@@ -967,6 +967,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../asignaturas/" title="Asignaturas" class="md-nav__link">
+      Asignaturas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../patentes/" title="Patentes" class="md-nav__link">
+      Patentes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -977,22 +1001,39 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Veces
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" title="Veces" class="md-nav__link md-nav__link--active">
       Veces
     </a>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../larga/" title="Palabra más larga" class="md-nav__link">
-      Palabra más larga
-    </a>
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1014,8 +1055,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../asignaturas/" title="Asignaturas" class="md-nav__link">
-      Asignaturas
+    <a href="../larga/" title="Palabra más larga" class="md-nav__link">
+      Palabra más larga
     </a>
   </li>
 
@@ -1026,8 +1067,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../patentes/" title="Patentes" class="md-nav__link">
-      Patentes
+    <a href="../censura/" title="Censura" class="md-nav__link">
+      Censura
     </a>
   </li>
 
@@ -1386,6 +1427,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1401,26 +1457,16 @@
                 
                 
                 <h1 id="veces">Veces</h1>
-<p>Escribir la función <code>veces(chico, grande)</code> que retorna la cantidad de veces que aparece el string chico dentro del <code>string</code> grande.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">veces</span><span class="p">(</span><span class="n">chico</span><span class="p">,</span> <span class="n">grande</span><span class="p">):</span>
-    <span class="n">cont</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador para las repeticiones</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Indice para recorrer el string</span>
-    <span class="c1"># Recorremos el string grande, utilizando indices, sin contar la ultima parte (tamaño del string chico)</span>
-    <span class="c1"># La idea es comparar el string pequeño con el substring del grande entre los indices [i:i+len(chico)]</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grande</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">chico</span><span class="p">)):</span> 
-        <span class="c1"># Comparamos el string chico con el substring del grande</span>
-        <span class="k">if</span> <span class="n">chico</span> <span class="o">==</span> <span class="n">grande</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">chico</span><span class="p">)]:</span> 
-            <span class="n">cont</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Contador de repeticiones</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> 
-    <span class="k">return</span> <span class="n">cont</span>
-<span class="c1"># Entrada de strings</span>
-<span class="n">grande</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese string grande: &quot;</span><span class="p">)</span>
-<span class="n">chico</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese string chico: &quot;</span><span class="p">)</span>
-<span class="c1"># Salida</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Las palabra&quot;</span><span class="p">,</span> <span class="n">chico</span><span class="p">,</span> <span class="s2">&quot;aparece&quot;</span><span class="p">,</span> <span class="n">veces</span><span class="p">(</span><span class="n">chico</span><span class="p">,</span> <span class="n">grande</span><span class="p">),</span> <span class="s2">&quot;veces en&quot;</span><span class="p">,</span> <span class="n">grande</span><span class="p">)</span>
+<p>Escribir un programa que cuente la cantidad de veces que aparece el <code>string</code> <code>palabra</code> dentro del <code>string</code> <code>oracion</code>.
+La oración, además de las palabras, solo contiene espacios. No considere signos de puntuación.</p>
+<h2 id="ejemplo">Ejemplo</h2>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; Ingrese una oración: En un lugar de la Mancha de cuyo nombre no quiero acordarme no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
+&gt;&gt;&gt; Ingrese una palabra: de
+4
+&gt;&gt;&gt; Ingrese una oración: En un lugar de la Mancha de cuyo nombre no quiero acordarme no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
+&gt;&gt;&gt; Ingrese una palabra: no
+2
 </code></pre></div>
-
-</details>
                 
               
               
@@ -1439,7 +1485,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
         
-          <a href="../contrase%C3%B1a/" title="Contraseña" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../patentes/" title="Patentes" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1448,19 +1494,19 @@
                 <span class="md-footer-nav__direction">
                   Anterior
                 </span>
-                Contraseña
+                Patentes
               </div>
             </div>
           </a>
         
         
-          <a href="../larga/" title="Palabra más larga" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../eliminar/" title="Eliminar" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Siguiente
                 </span>
-                Palabra más larga
+                Eliminar
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
