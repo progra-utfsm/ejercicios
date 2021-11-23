@@ -31,7 +31,7 @@ def agregar_delito(delito, delitos):
         if id_calle in niveles_peligrosidad[n]:
             existe_nivel = True
     if existe_calle and existe_nivel:
-        delitos.append({'id_calle': id_calle, 'fecha': '{}-{}-{}'.format(anio, mes, dia)})
+        delitos.append({'id_calle': id_calle, 'fecha': str(anio) + '-' + str(mes) + '-' + str(dia)})
         return True
     else:
         return False
