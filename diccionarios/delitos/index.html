@@ -1459,25 +1459,63 @@ y el año. Esta función debe entregar el nombre del mes del año en el que ocur
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">mes_mas_peligroso</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="n">delitos</span><span class="p">)</span>
 <span class="s1">&#39;Marzo&#39;</span>
 </code></pre></div></p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">viajes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="c1"># identificador_viaje: (origen, destino, minutos)</span>
-  <span class="mi">1323</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">),</span>
-  <span class="mi">7643</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span>
-  <span class="mi">9832</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
-  <span class="mi">2221</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;renca&#39;</span><span class="p">,</span> <span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">),</span>
-  <span class="c1">#...</span>
+<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="n">calles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># (id_calle1, nombre_calle1), …</span>
+    <span class="p">(</span><span class="mi">883345</span><span class="p">,</span> <span class="s1">&#39;La Montana&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">321333</span><span class="p">,</span> <span class="s1">&#39;Miraflores&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5843</span><span class="p">,</span> <span class="s1">&#39;Avellaneda&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2283904</span><span class="p">,</span> <span class="s1">&#39;Del Valle&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9430</span><span class="p">,</span> <span class="s1">&#39;Los Maitenes&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2239102</span><span class="p">,</span> <span class="s1">&#39;Rio Tolten&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">9432</span><span class="p">,</span> <span class="s1">&#39;Teniente Bello&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">niveles_peligrosidad</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># nivel: [id_calle1, id_calle2, id_calle3, …]</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">883345</span><span class="p">,</span> <span class="mi">2283904</span><span class="p">,</span> <span class="mi">5843</span><span class="p">],</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">9430</span><span class="p">,</span> <span class="mi">2239102</span><span class="p">,</span> <span class="mi">9432</span><span class="p">],</span>
+    <span class="c1"># ...</span>
 <span class="p">}</span>
 
-<span class="k">def</span> <span class="nf">cuenta_minutos</span><span class="p">(</span><span class="n">viajes</span><span class="p">):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">viajes</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
-            <span class="n">c</span><span class="p">[</span><span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">c</span><span class="p">[</span><span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
-    <span class="n">final</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
-        <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-    <span class="k">return</span> <span class="n">final</span>
+<span class="n">delitos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;id_calle&#39;</span><span class="p">:</span> <span class="mi">883345</span><span class="p">,</span> <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;2015-03-23&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;id_calle&#39;</span><span class="p">:</span> <span class="mi">9432</span><span class="p">,</span> <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;2015-02-12&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;id_calle&#39;</span><span class="p">:</span> <span class="mi">5843</span><span class="p">,</span> <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;2015-03-21&#39;</span><span class="p">},</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">agregar_delito</span><span class="p">(</span><span class="n">delito</span><span class="p">,</span> <span class="n">delitos</span><span class="p">):</span>
+    <span class="n">id_calle</span><span class="p">,</span> <span class="p">(</span><span class="n">anio</span><span class="p">,</span> <span class="n">mes</span><span class="p">,</span> <span class="n">dia</span><span class="p">)</span> <span class="o">=</span> <span class="n">delito</span>
+    <span class="c1">#buscamos si la calle existe</span>
+    <span class="n">existe_calle</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">calles</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">id_calle</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
+            <span class="n">existe_calle</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">existe_nivel</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">niveles_peligrosidad</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">id_calle</span> <span class="ow">in</span> <span class="n">niveles_peligrosidad</span><span class="p">[</span><span class="n">n</span><span class="p">]:</span>
+            <span class="n">existe_nivel</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">if</span> <span class="n">existe_calle</span> <span class="ow">and</span> <span class="n">existe_nivel</span><span class="p">:</span>
+        <span class="n">delitos</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;id_calle&#39;</span><span class="p">:</span> <span class="n">id_calle</span><span class="p">,</span> <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">anio</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mes</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dia</span><span class="p">)})</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+<span class="k">def</span> <span class="nf">mes_mas_peligroso</span><span class="p">(</span><span class="n">anio</span><span class="p">,</span> <span class="n">delitos</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">meses</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Enero&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Febrero&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Marzo&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;Abril&#39;</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;Mayo&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;Junio&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;Julio&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;Agosto&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;Septiembre&#39;</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;Octubre&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;Noviembre&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;Diciembre&#39;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">delitos</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">][:</span><span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="n">anio</span><span class="p">:</span>
+            <span class="n">mes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">mes</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">mes</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">p</span><span class="p">[</span><span class="n">mes</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">))</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">meses</span><span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
 </code></pre></div>
 
 </details>
