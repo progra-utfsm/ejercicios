@@ -15,7 +15,7 @@
     
     
       
-        <title>Palabra más larga - Ejercicios Progra</title>
+        <title>Veces - Ejercicios Progra</title>
       
     
     
@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#palabra-mas-larga" class="md-skip">
+        <a href="#veces" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -77,7 +77,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Palabra más larga
+              Veces
             
           </span>
         </div>
@@ -1313,6 +1313,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../diccionarios/autopista/" title="Autopista" class="md-nav__link">
+      Autopista
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1385,6 +1397,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1399,33 +1426,17 @@
                   
                 
                 
-                <h1 id="palabra-mas-larga">Palabra más larga</h1>
-<p>Escribir la función <code>palabra_mas_larga</code> que retorna un <code>string</code> con la palabra de mayor longitud de un texto cuyas palabras se separan por un único espacio y no hay espacio al final.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">palabra_mas_larga</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
-    <span class="n">larga</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Variable donde guardaremos la palabra mas larga</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Indice para recorrer el texto</span>
-    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Indice para guardar las posiciones de los espacios</span>
-    <span class="c1"># Recorremos el texto utilizando el indice i</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">texto</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span><span class="p">:</span> <span class="c1"># Si encontramos un espacio</span>
-            <span class="c1"># Utilizamos el substring que contiene la palabra a verificar</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="n">j</span><span class="p">:</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">larga</span><span class="p">):</span> <span class="c1"># Comparamos si la longitud es la mayor</span>
-                <span class="n">larga</span> <span class="o">=</span> <span class="n">texto</span><span class="p">[</span><span class="n">j</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="c1"># La guardamos</span>
-            <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># j guardara la posicion del ultimo espacio + 1 (para no contar el mismo espacio)</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="c1"># El ciclo anterior solo analizara las palabras cuando encuentre un espacio en el texto</span>
-    <span class="c1"># Para verificar la ultima palabra utilizamos el siguiente condicional</span>
-    <span class="c1"># j contiene la posicion del ultimo espacio + 1, y obtenemos hasta el final del substring</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="n">j</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">larga</span><span class="p">):</span> 
-        <span class="n">larga</span> <span class="o">=</span> <span class="n">texto</span><span class="p">[</span><span class="n">j</span><span class="p">:]</span>
-    <span class="k">return</span> <span class="n">larga</span>
-<span class="c1"># Entrada de texto</span>
-<span class="n">texto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese texto: &quot;</span><span class="p">)</span>
-<span class="c1"># Salida de respuesta</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;La palabra mas larga es:&quot;</span><span class="p">,</span> <span class="n">palabra_mas_larga</span><span class="p">(</span><span class="n">texto</span><span class="p">))</span>
+                <h1 id="veces">Veces</h1>
+<p>Escribir un programa que cuente la cantidad de veces que aparece el <code>string</code> <code>palabra</code> dentro del <code>string</code> <code>oracion</code>.
+La oración, además de las palabras, solo contiene espacios. No considere signos de puntuación.</p>
+<h2 id="ejemplo">Ejemplo</h2>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; Ingrese una oración: En un lugar de la Mancha de cuyo nombre no quiero acordarme no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
+&gt;&gt;&gt; Ingrese una palabra: de
+4
+&gt;&gt;&gt; Ingrese una oración: En un lugar de la Mancha de cuyo nombre no quiero acordarme no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
+&gt;&gt;&gt; Ingrese una palabra: no
+2
 </code></pre></div>
-
-</details>
                 
               
               

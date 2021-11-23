@@ -1313,6 +1313,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../diccionarios/autopista/" title="Autopista" class="md-nav__link">
+      Autopista
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1385,6 +1397,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1400,19 +1427,13 @@
                 
                 
                 <h1 id="eliminar">Eliminar</h1>
-<p>Escribir la función <code>eliminar(texto, palabra)</code> que retorna un <code>string</code> del que se han eliminado todas las ocurrencias de palabra dentro de texto.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">eliminar</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span> <span class="n">palabra</span><span class="p">):</span>
-    <span class="c1"># Podemos simplemente retornar el resultado de un replace de la palabra por texto vacio</span>
-    <span class="c1"># Se concatena un espacio a la palabra para borrar el espacio extra</span>
-    <span class="k">return</span> <span class="n">texto</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">palabra</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="c1"># Entrada de datos</span>
-<span class="n">texto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresar texto: &quot;</span><span class="p">)</span>
-<span class="n">palabra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresar palabra a eliminar: &quot;</span><span class="p">)</span>
-<span class="c1"># Salida</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Nuevo texto:&quot;</span><span class="p">,</span> <span class="n">eliminar</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span> <span class="n">palabra</span><span class="p">))</span>
+<p>Escribir un algoritmo que muestra un <code>string</code> del que se han eliminado todas las ocurrencias de palabra dentro de un texto.
+El texto, además de las palabras, solo contiene espacios. No considere signos de puntuación.</p>
+<h2 id="ejemplo">Ejemplo</h2>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; Ingresar texto: En un lugar de la Mancha de cuyo nombre no quiero acordarme no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
+&gt;&gt;&gt; Ingresar palabra a eliminar: no
+En un lugar de la Mancha de cuyo nombre quiero acordarme ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
 </code></pre></div>
-
-</details>
                 
               
               

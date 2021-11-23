@@ -15,7 +15,7 @@
     
     
       
-        <title>Veces - Ejercicios Progra</title>
+        <title>Palabra más larga - Ejercicios Progra</title>
       
     
     
@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#veces" class="md-skip">
+        <a href="#palabra-mas-larga" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -77,7 +77,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Veces
+              Palabra más larga
             
           </span>
         </div>
@@ -1313,6 +1313,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../diccionarios/autopista/" title="Autopista" class="md-nav__link">
+      Autopista
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1385,6 +1397,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    Ejemplo
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1399,27 +1426,12 @@
                   
                 
                 
-                <h1 id="veces">Veces</h1>
-<p>Escribir la función <code>veces(chico, grande)</code> que retorna la cantidad de veces que aparece el string chico dentro del <code>string</code> grande.</p>
-<details class="danger"><summary>Solución</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">veces</span><span class="p">(</span><span class="n">chico</span><span class="p">,</span> <span class="n">grande</span><span class="p">):</span>
-    <span class="n">cont</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Contador para las repeticiones</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Indice para recorrer el string</span>
-    <span class="c1"># Recorremos el string grande, utilizando indices, sin contar la ultima parte (tamaño del string chico)</span>
-    <span class="c1"># La idea es comparar el string pequeño con el substring del grande entre los indices [i:i+len(chico)]</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grande</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">chico</span><span class="p">)):</span> 
-        <span class="c1"># Comparamos el string chico con el substring del grande</span>
-        <span class="k">if</span> <span class="n">chico</span> <span class="o">==</span> <span class="n">grande</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">chico</span><span class="p">)]:</span> 
-            <span class="n">cont</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Contador de repeticiones</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> 
-    <span class="k">return</span> <span class="n">cont</span>
-<span class="c1"># Entrada de strings</span>
-<span class="n">grande</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese string grande: &quot;</span><span class="p">)</span>
-<span class="n">chico</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese string chico: &quot;</span><span class="p">)</span>
-<span class="c1"># Salida</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Las palabra&quot;</span><span class="p">,</span> <span class="n">chico</span><span class="p">,</span> <span class="s2">&quot;aparece&quot;</span><span class="p">,</span> <span class="n">veces</span><span class="p">(</span><span class="n">chico</span><span class="p">,</span> <span class="n">grande</span><span class="p">),</span> <span class="s2">&quot;veces en&quot;</span><span class="p">,</span> <span class="n">grande</span><span class="p">)</span>
+                <h1 id="palabra-mas-larga">Palabra más larga</h1>
+<p>Construya un algoritmo que muestre la palabra de mayor longitud de un texto cuyas palabras se separan por un único espacio y no hay espacio al final. Considere que no hay signos de puntuación en el texto.</p>
+<h2 id="ejemplo">Ejemplo</h2>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; Ingresar texto: En un lugar de la Mancha de cuyo nombre no quiero acordarme no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero
+acordarme
 </code></pre></div>
-
-</details>
                 
               
               
