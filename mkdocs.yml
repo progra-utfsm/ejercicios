@@ -63,11 +63,14 @@ nav:
     - Fechas mágicas: strings/fechas.md
     - Comparación: strings/comparacion.md
     - Contraseña: strings/contraseña.md
-    - Veces: strings/veces.md
-    - Palabra más larga: strings/larga.md
-    - Eliminar: strings/eliminar.md
     - Asignaturas: strings/asignaturas.md
     - Patentes: strings/patentes.md
+    - Veces: strings/veces.md
+    - Eliminar: strings/eliminar.md
+    - Palabra más larga: strings/larga.md
+    - Censura: strings/censura.md
+    
+    
   - Listas:
     - Ejemplos: listas/ejemplos.md
     - Desviación estándar: listas/desviacion.md
@@ -88,6 +91,7 @@ nav:
     - Conductores: diccionarios/conductores.md
     - Viajes: diccionarios/viajes.md
     - Delitos: diccionarios/delitos.md
+    - Autopista: diccionarios/autopista.md
   - Archivos:
     - Donantes: archivos/donantes.md
     - Consulta médica: archivos/consulta-medica.md
