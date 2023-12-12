@@ -1,5 +1,5 @@
 site_name: Ejercicios Progra
-copyright: Copyright &copy; 2021 - Progra UTFSM
+copyright: Copyright &copy; 2019 - 2023 &bullet; Progra UTFSM
 theme:
   name: material
   language: es
@@ -8,15 +8,17 @@ theme:
     logo: fontawesome/solid/laptop-code
     repo: fontawesome/brands/github
   features:
-    - tabs
-    - instant
-    - navigation.expand
+    - navigation.tabs
+    - navigation.instant
 nav:
   - Inicio: index.md
   - Secuenciales: 
     - Inicio: secuenciales/index.md
     - Pitágoras: secuenciales/pitagoras.md
-    - Área Triángulo: secuenciales/area-triangulo.md
+    - Distancia: secuenciales/distancia.md
+    - Sushi: secuenciales/sushi.md
+    - Amigos: secuenciales/amigos.md
+    - Triángulos: secuenciales/triangulos.md
     - Cilindro: secuenciales/cilindro.md
     - IMC: secuenciales/imc.md
     - Viaje: secuenciales/viaje.md
@@ -69,8 +71,6 @@ nav:
     - Eliminar: strings/eliminar.md
     - Palabra más larga: strings/larga.md
     - Censura: strings/censura.md
-    
-    
   - Listas:
     - Ejemplos: listas/ejemplos.md
     - Desviación estándar: listas/desviacion.md
@@ -78,9 +78,9 @@ nav:
     - Búsqueda binaria: listas/busqueda_binaria.md
     - Merge: listas/merge.md
     - Cine: listas/cine.md
-  - Tuplas:
-    - Rectas: tuplas/rectas.md
-    - Supermercado: tuplas/supermercado.md
+  # - Tuplas: (deprecated)
+  #   - Rectas: tuplas/rectas.md
+  #   - Supermercado: tuplas/supermercado.md
   - Diccionarios:
     - Final Copa América: diccionarios/copa.md
     - Fórmula 1: diccionarios/formula1.md
@@ -104,8 +104,9 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      # emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
