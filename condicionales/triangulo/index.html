@@ -913,6 +913,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../tiro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiro al blanco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ajedrez/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ajedrez
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tenis/" class="md-nav__link">
         
   
@@ -943,6 +985,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Triángulo
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -952,6 +1005,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2296,6 +2377,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2310,7 +2408,7 @@
 
 
 <h1 id="triangulo">Triángulo</h1>
-<p>Dados <span class="arithmatex">\(3\)</span> números reales que forman un triángulo debemos indicar qué tipo de triángulo es según sus lados y según sus ángulos.
+<p>Dados <span class="arithmatex">\(3\)</span> números reales que forman un triángulo debemos indicar qué tipo de triángulo es según sus lados (equilátero, isósceles o escaleno) y según sus ángulos.
 Considerando <span class="arithmatex">\(c\)</span> como el lado de mayor longitud: </p>
 <ul>
 <li>Si <span class="arithmatex">\(a^2 + b^2 = c^2\)</span> es rectángulo</li>
@@ -2321,22 +2419,46 @@ Considerando <span class="arithmatex">\(c\)</span> como el lado de mayor longitu
 <div class="arithmatex">\[\begin{equation}
     (a + b) &gt; c, \quad (a + c) &gt; b, \quad (b + c) &gt; a.
 \end{equation}\]</div>
+<h2 id="ejemplos">Ejemplos</h2>
+<div class="highlight"><pre><span></span><code>Ingrese a: 3.9
+Ingrese b: 6.0
+Ingrese c: 1.2
+No es un triángulo válido.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Ingrese a: 2.0
+Ingrese b: 1.9
+Ingrese c: 2.0
+El triángulo es isósceles.
+Además es acutángulo.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Ingrese a: 3.0
+Ingrese b: 5.0
+Ingrese c: 4.0
+El triángulo es escaleno.
+Además es rectángulo.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Ingrese a: 3.14
+Ingrese b: 3.14
+Ingrese c: 3.14
+El triángulo es equilatero.
+Además es acutángulo.
+</code></pre></div>
 <details class="danger">
 <summary>Solución</summary>
 <div class="highlight"><pre><span></span><code><span class="c1"># Programa que valida un triángulo y dice de qué tipo es</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;a: &#39;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;b: &#39;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;c: &#39;</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingrese a: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingrese b: &#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingrese c: &#39;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span> <span class="c1"># Cumple desigualdad triangular</span>
 
    <span class="c1"># Se determina ahora el tipo de triángulo de acuerdo a sus lados:</span>
    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Triángulo equilátero&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El triángulo es equilátero&#39;</span><span class="p">)</span>
    <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">==</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Triángulo isósceles&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El triángulo es isósceles&#39;</span><span class="p">)</span>
    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Triángulo escaleno&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El triángulo es escaleno&#39;</span><span class="p">)</span>
 
    <span class="c1"># Se determina ahora el tipo de triángulo de acuerdo a sus ángulos:</span>
    <span class="c1"># Primero se deja el lado mayor en hipotenusa y los restantes en a y b</span>
@@ -2351,14 +2473,14 @@ Considerando <span class="arithmatex">\(c\)</span> como el lado de mayor longitu
 
    <span class="c1"># Ahora se determina el tipo</span>
    <span class="k">if</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Además es rectángulo&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Además es rectángulo.&#39;</span><span class="p">)</span>
    <span class="k">elif</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Además es obtusángulo&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Además es obtusángulo.&#39;</span><span class="p">)</span>
    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Además es acutángulo&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Además es acutángulo.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
    <span class="c1"># No cumple la desigualdad triangular</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No se puede formar un triangulo con&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No es un triángulo válido.&#39;</span><span class="p">)</span>
 </code></pre></div>
 </details>
 
