@@ -35,6 +35,8 @@ nav:
     - Calculadora: condicionales/calculadora.md
     - Círculo: condicionales/circulo.md
     - Mayor: condicionales/mayor.md
+    - Tiro al blanco: condicionales/tiro.md
+    - Ajedrez: condicionales/ajedrez.md
     - Tenis: condicionales/tenis.md
     - Triángulo: condicionales/triangulo.md
     - Horas extra: condicionales/horas_extra.md
