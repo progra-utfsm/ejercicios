@@ -10,6 +10,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - navigation.instant.prefetch
 nav:
   - Inicio: index.md
   - Secuenciales: 

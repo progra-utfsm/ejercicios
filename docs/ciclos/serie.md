@@ -7,7 +7,15 @@ que comienza en $1$ y se forma sumando $1$, luego $2$, luego $3$, luego $4$, y a
 
 ```
 Ingrese n: 9
-1 2 4 7 11 16 22 29 37
+1
+2
+4
+7
+11
+16
+22
+29
+37
 ```
 
 ??? danger "Solución"
