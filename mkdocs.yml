@@ -52,6 +52,7 @@ nav:
     - Pirata: ciclos/pirata.md
     - Rango: ciclos/rango.md
     - VAN: ciclos/van.md
+    - Exponencial: ciclos/exponencial.md
   - Funciones:
     - Comentarios: funciones/comentarios.md
     - Fuerza gravitacional: funciones/gravitacional.md
