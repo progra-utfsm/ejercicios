@@ -80,8 +80,10 @@ nav:
     - Desviación estándar: listas/desviacion.md
     - Búsqueda secuencial: listas/busqueda_lineal.md
     - Búsqueda binaria: listas/busqueda_binaria.md
+    - Derivadas: listas/derivadas.md
     - Merge: listas/merge.md
     - Cine: listas/cine.md
+    - Producto matriz-vector: listas/producto_matriz.md
   # - Tuplas: (deprecated)
   #   - Rectas: tuplas/rectas.md
   #   - Supermercado: tuplas/supermercado.md
