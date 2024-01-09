@@ -2439,10 +2439,10 @@
 <p>Considerando la siguiente estructura:
 <div class="highlight"><pre><span></span><code><span class="n">viajes</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1"># identificador_viaje: (origen, destino, minutos)</span>
-    <span class="mi">1323</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">),</span>
-    <span class="mi">7643</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span>
-    <span class="mi">9832</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
-    <span class="mi">2221</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;renca&#39;</span><span class="p">,</span> <span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">),</span>
+    <span class="mi">1323</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>
+    <span class="mi">7643</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span>
+    <span class="mi">9832</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
+    <span class="mi">2221</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;renca&#39;</span><span class="p">,</span> <span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span>
     <span class="c1">#...</span>
 <span class="p">}</span>
 </code></pre></div></p>
@@ -2450,20 +2450,11 @@
 cada viaje, y entregue una lista con las comunas destino y los minutos totales que se han
 demorado los viajes hacia ellas (en cualquier orden).
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">cuenta_minutos</span><span class="p">(</span><span class="n">viajes</span><span class="p">)</span>
-<span class="p">[(</span><span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">79</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">)]</span>
+<span class="p">[[</span><span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">79</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">]]</span>
 </code></pre></div></p>
 <details class="danger">
 <summary>Solución</summary>
-<div class="highlight"><pre><span></span><code><span class="n">viajes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="c1"># identificador_viaje: (origen, destino, minutos)</span>
-  <span class="mi">1323</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">),</span>
-  <span class="mi">7643</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span>
-  <span class="mi">9832</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
-  <span class="mi">2221</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;renca&#39;</span><span class="p">,</span> <span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">),</span>
-  <span class="c1">#...</span>
-<span class="p">}</span>
-
-<span class="k">def</span> <span class="nf">cuenta_minutos</span><span class="p">(</span><span class="n">viajes</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">cuenta_minutos</span><span class="p">(</span><span class="n">viajes</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">viajes</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
@@ -2471,8 +2462,19 @@ demorado los viajes hacia ellas (en cualquier orden).
         <span class="n">c</span><span class="p">[</span><span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">viajes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">final</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
-        <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
     <span class="k">return</span> <span class="n">final</span>
+
+<span class="n">viajes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1"># identificador_viaje: [origen, destino, minutos]</span>
+  <span class="mi">1323</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>
+  <span class="mi">7643</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;santiago&#39;</span><span class="p">,</span> <span class="s1">&#39;vitacura&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span>
+  <span class="mi">9832</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="s1">&#39;lampa&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
+  <span class="mi">2221</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;renca&#39;</span><span class="p">,</span> <span class="s1">&#39;las condes&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span>
+  <span class="c1">#...</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cuenta_minutos</span><span class="p">(</span><span class="n">viajes</span><span class="p">))</span>
 </code></pre></div>
 </details>
 

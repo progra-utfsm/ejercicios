@@ -2438,16 +2438,15 @@
 <h1 id="conductores">Conductores</h1>
 <p>Considerando la siguiente estructura de datos:</p>
 <div class="highlight"><pre><span></span><code><span class="n">conductores</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">#username: (nombre, puntaje, (marca, modelo))</span>
-    <span class="s1">&#39;azambrano&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Elantra&#39;</span><span class="p">)),</span>
-    <span class="s1">&#39;jojeda&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Accent&#39;</span><span class="p">)),</span>
+    <span class="c1">#username: [nombre, puntaje, [marca, modelo]]</span>
+    <span class="s1">&#39;azambrano&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Elantra&#39;</span><span class="p">]],</span>
+    <span class="s1">&#39;jojeda&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Accent&#39;</span><span class="p">]],</span>
     <span class="c1">#...</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>a) Desarrolle la función <code>agrega_conductor(conductores, nuevo_conductor)</code> donde
-<code>nuevo_conductor</code> corresponde a una tupla con los siguientes datos (<code>username</code>,
-<code>nombre_completo</code>, <code>puntaje</code>, (<code>marca</code>, <code>modelo</code>)). Por ejemplo;
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">agrega_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,(</span><span class="s1">&#39;fsoto&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="s1">&#39;308&#39;</span><span class="p">))</span>
+<code>nuevo_conductor</code> corresponde a una lista con los siguientes datos <code>[username, nombre_completo, puntaje, [marca, modelo]]</code>. Por ejemplo;
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">agrega_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,[</span><span class="s1">&#39;fsoto&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="s1">&#39;308&#39;</span><span class="p">]])</span>
 <span class="kc">True</span>
 </code></pre></div>
 La función debe modificar el diccionario y retornar <code>True</code>. Si el <code>username</code> del conductor a
@@ -2460,25 +2459,22 @@ con el <code>username</code> desde la estructura conductores.
 <span class="kc">False</span>
 </code></pre></div>
 c) Desarrolle la función <code>ranking(conductores)</code> que recibe el diccionario conductores y entrega
-una lista de tuplas con los <code>usernames</code> y puntajes, ordenados de mayor a menor puntaje.
+una lista de listas con los <code>usernames</code> y puntajes, ordenados de mayor a menor puntaje.
 Por ejemplo;
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ranking</span><span class="p">(</span><span class="n">conductores</span><span class="p">)</span>
-<span class="p">[(</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)]</span>
+<span class="p">[[</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">]]</span>
 </code></pre></div></p>
 <details class="danger">
 <summary>Solución</summary>
-<div class="highlight"><pre><span></span><code><span class="n">conductores</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;azambrano&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Elantra&#39;</span><span class="p">)),</span>
-    <span class="s1">&#39;jojeda&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Accent&#39;</span><span class="p">)),</span>
-    <span class="c1"># ...</span>
-<span class="p">}</span>
-
-
-<span class="k">def</span> <span class="nf">agrega_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,</span> <span class="n">nuevo_conductor</span><span class="p">):</span>
-    <span class="n">username</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">puntaje</span><span class="p">,</span> <span class="p">(</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">)</span> <span class="o">=</span> <span class="n">nuevo_conductor</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">agrega_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,</span> <span class="n">nuevo_conductor</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">nuevo_conductor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">nuevo_conductor</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">puntaje</span> <span class="o">=</span> <span class="n">nuevo_conductor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">marca</span> <span class="o">=</span> <span class="n">nuevo_conductor</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">modelo</span> <span class="o">=</span> <span class="n">nuevo_conductor</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">conductores</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
-    <span class="n">conductores</span><span class="p">[</span><span class="n">username</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">puntaje</span><span class="p">,</span> <span class="p">(</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">))</span>
+    <span class="n">conductores</span><span class="p">[</span><span class="n">username</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nombre</span><span class="p">,</span> <span class="n">puntaje</span><span class="p">,</span> <span class="p">[</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">]]</span>
     <span class="k">return</span> <span class="kc">True</span>
 
 
@@ -2492,13 +2488,27 @@ Por ejemplo;
 <span class="k">def</span> <span class="nf">ranking</span><span class="p">(</span><span class="n">conductores</span><span class="p">):</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">conductores</span><span class="p">:</span>
-        <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">conductores</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">conductores</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">conductores</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">conductores</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
     <span class="n">r</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
     <span class="n">r</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
     <span class="n">final</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">puntaje</span><span class="p">,</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">datos</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">puntaje</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nombre</span><span class="p">,</span> <span class="n">puntaje</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">final</span>
+
+
+<span class="n">conductores</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;azambrano&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Andres Zambrano&#39;</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Elantra&#39;</span><span class="p">]],</span>
+    <span class="s1">&#39;jojeda&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Juan Ojeda&#39;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span> <span class="s1">&#39;Accent&#39;</span><span class="p">]],</span>
+    <span class="c1"># ...</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">agrega_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,[</span><span class="s1">&#39;fsoto&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabiola Soto&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="s1">&#39;308&#39;</span><span class="p">]]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elimina_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,</span> <span class="s1">&#39;jojeda&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elimina_conductor</span><span class="p">(</span><span class="n">conductores</span><span class="p">,</span> <span class="s1">&#39;pmunoz&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ranking</span><span class="p">(</span><span class="n">conductores</span><span class="p">))</span>
 </code></pre></div>
 </details>
 

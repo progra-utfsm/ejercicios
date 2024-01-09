@@ -2570,17 +2570,17 @@
 
 
 <h1 id="autopistas">Autopistas</h1>
-<p>Una concesionaria de autopista registra en la lista transitos las veces que cada vehículo pasa por uno de los pórticos de cobro. Cada tupla de la lista contiene la patente del veh ́ıculo seguida del nu ́mero de pórtico. Por ejemplo:</p>
+<p>Una concesionaria de autopista registra en la lista transitos las veces que cada vehículo pasa por uno de los pórticos de cobro. Cada lista de la lista contiene la patente del vehículo seguida del número de pórtico. Por ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="n">transitos</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;CCHH19&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> 
-    <span class="p">(</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;DDKK33&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">[</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;CCHH19&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;DDKK33&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div>
 <h2 id="ejercicio-1">Ejercicio 1</h2>
-<p>Escriba la función <code>mayor_movilidad(transitos)</code>, que retorna una lista de tuplas con los tres vehículos que pasaron por más pórticos. El primer elemento de cada tupla es la patente y el segundo es la cantidad de pórticos por los que paso.</p>
+<p>Escriba la función <code>mayor_movilidad(transitos)</code>, que retorna una lista de listas con los tres vehículos que pasaron por más pórticos. El primer elemento de cada lista es la patente y el segundo es la cantidad de pórticos por los que paso.</p>
 <h3 id="ejemplo">Ejemplo</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mayor_movilidad</span><span class="p">(</span><span class="n">transitos</span><span class="p">))</span> 
-<span class="p">[(</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;DDKK33&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="p">[[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;DDKK33&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 </code></pre></div>
 <h2 id="ejercicio-2">Ejercicio 2</h2>
 <p>Escriba la función <code>reportar(transitos)</code>, que retorna un diccionario que lista, ordenadamente, los autos que pasaron por cada pórtico. La llave es el número de pórtico, y el valor es la lista de patentes, ordenada alfabeticamente y sin repeticiones.</p>
@@ -2590,7 +2590,55 @@
 </code></pre></div>
 <details class="danger">
 <summary>Solución</summary>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mayor_movilidad</span><span class="p">(</span><span class="n">transitos</span><span class="p">):</span>
+    <span class="c1"># Conteo de patentes #</span>
+    <span class="n">conteo</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Diccionario para realizar conteo</span>
+    <span class="k">for</span> <span class="n">transito</span> <span class="ow">in</span> <span class="n">transitos</span><span class="p">:</span> <span class="c1"># Recorrido de la estructura</span>
+        <span class="n">patente</span> <span class="o">=</span> <span class="n">transito</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Patente</span>
+        <span class="k">if</span> <span class="n">patente</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">conteo</span><span class="p">:</span> <span class="c1"># Si la patente no existe </span>
+            <span class="n">conteo</span><span class="p">[</span><span class="n">patente</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Creamos el contador</span>
+        <span class="n">conteo</span><span class="p">[</span><span class="n">patente</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Sumamos uno cada vez que encontremos la patente</span>
+    <span class="c1"># Lista temporal para ordenar segun el conteo #</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Estructura: [[conteo_1, patente_1], [conteo_2, patente_2], ...]</span>
+    <span class="k">for</span> <span class="n">patente</span> <span class="ow">in</span> <span class="n">conteo</span><span class="p">:</span> <span class="c1"># Recorremos el diccionario</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="p">[</span><span class="n">conteo</span><span class="p">[</span><span class="n">patente</span><span class="p">],</span> <span class="n">patente</span><span class="p">]</span> <span class="c1"># Dejamos el conteo primero para ordenar con sort</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span> <span class="c1"># Agregamos la lista temporal</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Ordenamos ascendentemente</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># Ordenamos descendentemente</span>
+    <span class="c1"># Lista de salida segun el formato solicitado #</span>
+    <span class="n">salida</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">conteo</span><span class="p">,</span> <span class="n">patente</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span> <span class="c1"># Recorremos solo los primeros 3 que necesitamos</span>
+        <span class="n">salida</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">patente</span><span class="p">,</span> <span class="n">conteo</span><span class="p">])</span> <span class="c1"># Volvemos al orden solicitado</span>
+    <span class="k">return</span> <span class="n">salida</span>
+
+
+<span class="k">def</span> <span class="nf">reportar</span><span class="p">(</span><span class="n">transitos</span><span class="p">):</span>
+    <span class="n">reporte</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Diccionario a retornar</span>
+    <span class="k">for</span> <span class="n">transito</span> <span class="ow">in</span> <span class="n">transitos</span><span class="p">:</span> <span class="c1"># Recorrido de la estructura</span>
+        <span class="n">patente</span> <span class="o">=</span> <span class="n">transito</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">portico</span> <span class="o">=</span> <span class="n">transito</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">portico</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">reporte</span><span class="p">:</span> <span class="c1"># Si no existe el portico en el diccionario</span>
+            <span class="n">reporte</span><span class="p">[</span><span class="n">portico</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Se crea una lista vacia</span>
+        <span class="k">if</span> <span class="n">patente</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">reporte</span><span class="p">[</span><span class="n">portico</span><span class="p">]:</span> <span class="c1"># Si la patente no existe en la lista</span>
+            <span class="n">reporte</span><span class="p">[</span><span class="n">portico</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">patente</span><span class="p">)</span> <span class="c1"># Se agrega</span>
+        <span class="n">reporte</span><span class="p">[</span><span class="n">portico</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Ordenamos la lista de patentes en orden alfabetico</span>
+    <span class="k">return</span> <span class="n">reporte</span> <span class="c1"># Retornar diccionario</span>
+
+<span class="c1"># Estructura de prueba #</span>
+<span class="n">transitos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;CCHH19&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;BBJJ77&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;DDKK33&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">&#39;AAFF37&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Pruebas #</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mayor_movilidad</span><span class="p">(</span><span class="n">transitos</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reportar</span><span class="p">(</span><span class="n">transitos</span><span class="p">))</span>
 </code></pre></div>
 </details>
 
