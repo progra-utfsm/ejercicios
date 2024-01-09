@@ -1,6 +1,6 @@
 # Fórmula 1
 
-Los valores asociados con las llaves pueden ser también colecciones, como tuplas, listas e incluso otros diccionarios.
+Los valores asociados con las llaves pueden ser también colecciones, como listas e incluso otros diccionarios.
 
 ```python
 F1 = {

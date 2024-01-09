@@ -4,10 +4,10 @@ Considerando la siguiente estructura:
 ```python
 viajes = {
     # identificador_viaje: (origen, destino, minutos)
-    1323: ('santiago', 'lampa', 34),
-    7643: ('santiago', 'vitacura', 27),
-    9832: ('las condes', 'lampa', 45),
-    2221: ('renca', 'las condes', 38),
+    1323: ['santiago', 'lampa', 34],
+    7643: ['santiago', 'vitacura', 27],
+    9832: ['las condes', 'lampa', 45],
+    2221: ['renca', 'las condes', 38],
     #...
 }
 ```
@@ -17,7 +17,7 @@ cada viaje, y entregue una lista con las comunas destino y los minutos totales q
 demorado los viajes hacia ellas (en cualquier orden).
 ```python
 >>> cuenta_minutos(viajes)
-[('lampa', 79), ('vitacura', 27), ('las condes', 38)]
+[['lampa', 79], ['vitacura', 27], ['las condes', 38]]
 ```
 
 ???danger "Solución"

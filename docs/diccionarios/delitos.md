@@ -3,13 +3,13 @@
 Considerando las siguientes estructuras:
 ```python
 calles = [
-    # (id_calle1, nombre_calle1), …
-    (883345, 'La Montana'), (321333, 'Miraflores'), (5843, 'Avellaneda'),
-    (2283904, 'Del Valle'), (9430, 'Los Maitenes'), (2239102, 'Rio Tolten'),
-    (9432, 'Teniente Bello')
+    # [id_calle1, nombre_calle1], ...
+    [883345, 'La Montana'], [321333, 'Miraflores'], [5843, 'Avellaneda'],
+    [2283904, 'Del Valle'], [9430, 'Los Maitenes'], [2239102, 'Rio Tolten'],
+    [9432, 'Teniente Bello']
 ]
 niveles_peligrosidad = {
-    #nivel: [id_calle1, id_calle2, id_calle3, …]
+    #nivel: [id_calle1, id_calle2, id_calle3, ...]
     2: [883345, 2283904, 5843],
     1: [9430, 2239102,9432], 
     # ...
@@ -21,17 +21,17 @@ delitos = [
     # ...
 ]
 ```
-a) Desarrolle la función `agregar_delito(delito, delitos)` que recibe la tupla `delito`
-con los datos a agregar, y la lista de delitos. Si la función logra agregar el delito, debe
+a) Desarrolle la función `agregar_delito(delito, delitos, calles, niveles_peligrosidad)` que recibe la lista `delito`
+con los datos a agregar y las estructuras definidas anteriormente. Si la función logra agregar el delito, debe
 retornar `True`, en caso de error debe retornar `False`. Para agregar un delito correctamente la calle
 debe existir y tener asociado un nivel de peligrosidad.
 ```python
->>> agregar_delito((9430, (2016, 1, 1)), delitos)
+>>> agregar_delito([9430, [2016, 1, 1]], delitos, calles, niveles_peligrosidad)
 True
->>> agregar_delito((322, (2016, 3, 23)), delitos)
+>>> agregar_delito([322, [2016, 3, 23]], delitos, calles, niveles_peligrosidad)
 False
 ```
-b) Desarrolle la función `mes_mas_peligroso(anio, delitos)` que recibe la lista de delitos
+b) Desarrolle la función `mes_mas_peligroso(año, delitos)` que recibe la lista de delitos
 y el año. Esta función debe entregar el nombre del mes del año en el que ocurren más delitos.
 ```python
 >>> mes_mas_peligroso(2015, delitos)

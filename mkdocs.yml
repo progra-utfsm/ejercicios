@@ -80,6 +80,7 @@ nav:
     - Desviación estándar: listas/desviacion.md
     - Búsqueda secuencial: listas/busqueda_lineal.md
     - Búsqueda binaria: listas/busqueda_binaria.md
+    - Producto interno: listas/producto_interno.md
     - Derivadas: listas/derivadas.md
     - Merge: listas/merge.md
     - Cine: listas/cine.md

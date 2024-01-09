@@ -1,22 +1,22 @@
 # Autopistas
 
-Una concesionaria de autopista registra en la lista transitos las veces que cada vehículo pasa por uno de los pórticos de cobro. Cada tupla de la lista contiene la patente del veh ́ıculo seguida del nu ́mero de pórtico. Por ejemplo:
+Una concesionaria de autopista registra en la lista transitos las veces que cada vehículo pasa por uno de los pórticos de cobro. Cada lista de la lista contiene la patente del vehículo seguida del número de pórtico. Por ejemplo:
 
 ```python
 transitos = [
-    ('BBJJ77',2), ('CCHH19',3), ('AAFF37',3), ('BBJJ77',1), 
-    ('AAFF37',1), ('DDKK33',3), ('AAFF37',1), ('AAFF37',2)
+    ['BBJJ77',2], ['CCHH19',3], ['AAFF37',3], ['BBJJ77',1], 
+    ['AAFF37',1], ['DDKK33',3], ['AAFF37',1], ['AAFF37',2]
 ]
 ```
 
 ## Ejercicio 1
 
-Escriba la función `mayor_movilidad(transitos)`, que retorna una lista de tuplas con los tres vehículos que pasaron por más pórticos. El primer elemento de cada tupla es la patente y el segundo es la cantidad de pórticos por los que paso.
+Escriba la función `mayor_movilidad(transitos)`, que retorna una lista de listas con los tres vehículos que pasaron por más pórticos. El primer elemento de cada lista es la patente y el segundo es la cantidad de pórticos por los que paso.
 
 ### Ejemplo
 ```python
 >>> print(mayor_movilidad(transitos)) 
-[('AAFF37', 4), ('BBJJ77', 2), ('DDKK33', 1)]
+[['AAFF37', 4], ['BBJJ77', 2], ['DDKK33', 1]]
 ```
 
 ## Ejercicio 2
@@ -32,5 +32,5 @@ Escriba la función `reportar(transitos)`, que retorna un diccionario que lista,
 
 ??? danger "Solución"
     ```python
-    --8<-- ";python/diccionarios/autopista.py"
+    --8<-- "python/diccionarios/autopista.py"
     ```
