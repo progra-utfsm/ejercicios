@@ -7,7 +7,9 @@ def agregar_delito(delito, delitos, calles, niveles_peligrosidad):
     dia = fecha[2]
     #buscamos si la calle existe
     existe_calle = False
-    for id, nombre in calles:
+    for calle in calles:
+        id = calle[0]
+        nombre = calle[1]
         if id_calle == id:
             existe_calle = True
     existe_nivel = False

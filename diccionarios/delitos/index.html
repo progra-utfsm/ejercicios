@@ -2480,7 +2480,9 @@ y el año. Esta función debe entregar el nombre del mes del año en el que ocur
     <span class="n">dia</span> <span class="o">=</span> <span class="n">fecha</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
     <span class="c1">#buscamos si la calle existe</span>
     <span class="n">existe_calle</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">calles</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">calle</span> <span class="ow">in</span> <span class="n">calles</span><span class="p">:</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">calle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">calle</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">id_calle</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
             <span class="n">existe_calle</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">existe_nivel</span> <span class="o">=</span> <span class="kc">False</span>
