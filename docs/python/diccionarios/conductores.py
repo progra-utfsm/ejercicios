@@ -27,7 +27,7 @@ def ranking(conductores):
     for datos in r:
         puntaje = datos[0]
         nombre = datos[1]
-        final.append((nombre, puntaje))
+        final.append([nombre, puntaje])
     return final
 
 
