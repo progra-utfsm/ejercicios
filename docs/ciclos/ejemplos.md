@@ -51,9 +51,9 @@ while i <= n:
 ### ¿Cuántas veces se ejecuta el siguiente ciclo?, ¿Para qué sirve?
 
 ```python
-n = input('n: ')
+n = int(input('n: '))
 while n <= 0:
-    n = input('n: ')
+    n = int(input('n: '))
 ```
 
 ??? danger "Solución"
