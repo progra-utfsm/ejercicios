@@ -85,6 +85,8 @@ nav:
     - Merge: listas/merge.md
     - Cine: listas/cine.md
     - Producto matriz-vector: listas/producto_matriz.md
+    - Productos: listas/productos.md
+    - Texto: listas/texto.md
   # - Tuplas: (deprecated)
   #   - Rectas: tuplas/rectas.md
   #   - Supermercado: tuplas/supermercado.md
