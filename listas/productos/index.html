@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../busqueda_binaria/">
+        <link rel="prev" href="../producto_matriz/">
       
       
-        <link rel="next" href="../derivadas/">
+        <link rel="next" href="../../diccionarios/copa/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Producto interno - Ejercicios Progra</title>
+        <title>Productos - Ejercicios Progra</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#producto-interno" class="md-skip">
+        <a href="#productos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Producto interno
+              Productos
             
           </span>
         </div>
@@ -1938,30 +1938,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Producto interno
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../producto_interno/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1970,35 +1950,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ejemplos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ejemplos
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2092,10 +2043,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../productos/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Productos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2104,6 +2075,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2489,9 +2489,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ejemplos" class="md-nav__link">
+  <a href="#ejercicios" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejemplos
+      Ejercicios
     </span>
   </a>
   
@@ -2512,34 +2512,87 @@
                   
 
 
-<h1 id="producto-interno">Producto Interno</h1>
-<p>Sean <span class="arithmatex">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\)</span> dos vectores definidos como:</p>
-<div class="arithmatex">\[
-\mathbf{u} = \left(u_1, u_2, \dots, u_n\right)^{\top}, \quad
-\mathbf{v} = \left(v_1, v_2, \dots, v_n\right)^{\top}.
-\]</div>
-<p>El producto interno, escalar o punto se calcula de la siguiente forma:</p>
-<div class="arithmatex">\[
-\mathbf{u}\cdot\mathbf{v} = u_1\,v_1 + u_2\,v_2 + \cdots + u_n\,v_n = 
-\sum_{i=1}^nu_i\,v_i.
-\]</div>
-<p>Desarrolle la función <code>producto_interno(u, v)</code> que recibe dos listas que representan los vectores <span class="arithmatex">\(\mathbf{u}\)</span> y <span class="arithmatex">\(\mathbf{v}\)</span>, y calcule el producto interno.</p>
-<h2 id="ejemplos">Ejemplos</h2>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; producto_interno([1, 0], [0, 1])
-0
-&gt;&gt;&gt; producto_interno([1, 2, 3], [4, 5, 6])
-32
-&gt;&gt;&gt; producto_interno([0, -1, 2.3, 4, 99], [-1, 0, 0, 2, 2])
-206.0
+<h1 id="productos">Productos</h1>
+<p>El personal encargado de reponer productos en un supermercado actualiza una lista de productos de acuerdo a lo que va encontrando en su recorrido por los pasillos. Se tiene una lista de productos como la siguiente:
+<div class="highlight"><pre><span></span><code><span class="n">productos</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="err">‘</span><span class="n">fideos</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">carozzi</span><span class="err">’</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="err">‘</span><span class="n">arroz</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">tucapel</span><span class="err">’</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span>
 </code></pre></div>
+Los productos son almacenados de acuerdo a su categoría, marca, número de unidades y pasillo en el que se encuentra.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>a. Cree la función <code>actualizar_unidades_a(categoría, marca, unidades,
+productos)</code> que recibe una categoría, una marca, el nuevo número de unidades de ese producto y la lista productos. El programa debe retornar la lista productos con el nuevo número de unidades. Considere que los productos y marcas a actualizar ya están incluidos en la lista productos.</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">productos</span> <span class="o">=</span> <span class="n">actualizar_unidades_a</span><span class="p">(</span><span class="err">‘</span><span class="n">fideos</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">carozzi</span><span class="err">’</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">productos</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
+<span class="p">[[</span><span class="s1">&#39;fideos&#39;</span><span class="p">,</span> <span class="s1">&#39;carozzi&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;arroz&#39;</span><span class="p">,</span> <span class="s1">&#39;tucapel&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</code></pre></div>
+b. Modifique el programa anterior para que cuando se quiera actualizar un producto no incluido en la lista productos original, se cree un nuevo registro. Cuando se quiera actualizar un producto que no se encuentra en productos, el programa debe solicitar al usuario el ingreso del pasillo en el cual el producto se encuentra. La función debe retornar la lista productos ordenada de menor a mayor según el número de pasillo.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">productos</span> <span class="o">=</span> <span class="n">actualizar_unidades_b</span><span class="p">(</span><span class="err">‘</span><span class="n">azúcar</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">ianza</span><span class="err">’</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">productos</span><span class="p">)</span>
+<span class="n">El</span> <span class="n">producto</span><span class="p">:</span> <span class="n">azúcar</span> <span class="p">(</span><span class="n">ianza</span><span class="p">)</span> <span class="n">no</span> <span class="n">es</span> <span class="n">encuentra</span> <span class="n">en</span> <span class="n">los</span> <span class="n">registros</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Indique</span> <span class="n">número</span> <span class="n">de</span> <span class="n">pasillo</span><span class="p">:</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
+<span class="p">[[</span><span class="s1">&#39;azúcar&#39;</span><span class="p">,</span> <span class="s1">&#39;ianza&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;fideos&#39;</span><span class="p">,</span> <span class="s1">&#39;carozzi&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;arroz&#39;</span><span class="p">,</span>
+<span class="s1">&#39;tucapel&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</code></pre></div></p>
+<p>c. Cree la función borrar_productos(lista_productos, productos) que permita eliminar los productos contenidos en lista_productos de la lista productos.
+Considere el siguiente ejemplo:
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lista_productos</span> <span class="o">=</span> <span class="p">[[</span><span class="err">‘</span><span class="n">azúcar</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">ianza</span><span class="err">’</span><span class="p">],</span> <span class="p">[</span><span class="err">‘</span><span class="n">fideos</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">carozzi</span><span class="err">’</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">productos</span> <span class="o">=</span> <span class="n">borrar_productos</span><span class="p">(</span><span class="n">lista_productos</span><span class="p">,</span> <span class="n">productos</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
+<span class="p">[[</span><span class="s1">&#39;arroz&#39;</span><span class="p">,</span> <span class="s1">&#39;tucapel&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</code></pre></div></p>
 <details class="danger">
 <summary>Solución</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">producto_interno</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="c1"># u y v tienen el mismo tamaño</span>
-    <span class="n">productos</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Lista para guardar los productos</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># Recorremos los elementos de u y v</span>
-        <span class="n">productos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># Guardamos el producto</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span> <span class="c1"># Sumamos los productos</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">actualizar_unidades_a</span><span class="p">(</span><span class="n">categoria</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">unidades</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">productos</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">categoria</span> <span class="o">==</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">marca</span> <span class="o">==</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">unidades</span>
+    <span class="k">return</span> <span class="n">productos</span>
+
+<span class="k">def</span> <span class="nf">actualizar_unidades_b</span><span class="p">(</span><span class="n">categoria</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">unidades</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
+    <span class="n">agregar</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">productos</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">categoria</span> <span class="o">==</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">marca</span> <span class="o">==</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">unidades</span>
+            <span class="n">agregar</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">agregar</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El producto: &quot;</span> <span class="o">+</span> <span class="n">categoria</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">marca</span> <span class="o">+</span> <span class="s2">&quot;) no es encuentra en los registros.&quot;</span><span class="p">)</span>
+        <span class="n">pasillo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique pasillo: &quot;</span><span class="p">))</span>
+        <span class="n">nuevo_producto</span> <span class="o">=</span> <span class="p">[</span><span class="n">categoria</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">unidades</span><span class="p">,</span> <span class="n">pasillo</span><span class="p">]</span>
+        <span class="n">productos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nuevo_producto</span><span class="p">)</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span>
+        <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">producto</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">producto</span><span class="p">])</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">productos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">tmp</span><span class="p">:</span>
+        <span class="n">productos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">producto</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">productos</span>
+
+<span class="k">def</span> <span class="nf">borrar_productos</span><span class="p">(</span><span class="n">lista_productos</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
+    <span class="n">eliminar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">productos</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">lista_productos</span><span class="p">:</span>
+            <span class="n">cat</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">mar</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">cat</span> <span class="ow">and</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">mar</span><span class="p">:</span>
+                <span class="n">eliminar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">eliminar</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">eliminar</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">eliminar</span><span class="p">:</span>
+        <span class="k">del</span> <span class="n">productos</span><span class="p">[</span><span class="n">e</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">productos</span>    
+
+<span class="n">productos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;fideos&#39;</span><span class="p">,</span> <span class="s1">&#39;carozzi&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;arroz&#39;</span><span class="p">,</span> <span class="s1">&#39;tucapel&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
+<span class="n">productos</span> <span class="o">=</span> <span class="n">actualizar_unidades_a</span><span class="p">(</span><span class="s1">&#39;fideos&#39;</span><span class="p">,</span> <span class="s1">&#39;carozzi&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">productos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
+<span class="n">lista_productos</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;azúcar&#39;</span><span class="p">,</span> <span class="s1">&#39;ianza&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;fideos&#39;</span><span class="p">,</span> <span class="s1">&#39;carozzi&#39;</span><span class="p">]]</span>
+<span class="n">productos</span> <span class="o">=</span> <span class="n">borrar_productos</span><span class="p">(</span><span class="n">lista_productos</span><span class="p">,</span> <span class="n">productos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
 </code></pre></div>
 </details>
 
