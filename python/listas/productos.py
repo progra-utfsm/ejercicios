@@ -39,7 +39,7 @@ def borrar_productos(lista_productos, productos):
     return productos    
 
 def borrar_productos(lista_productos, productos):
-    borrar = [] # Guardar los productos a borrar a borrar
+    borrar = [] # Guardar los productos a borrar
     for p in lista_productos:
         for producto in productos:
             if p[0] == producto[0] and p[1] == producto[1]:
