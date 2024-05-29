@@ -2589,7 +2589,7 @@ Considere el siguiente ejemplo:
     <span class="k">return</span> <span class="n">productos</span>
 
 <span class="k">def</span> <span class="nf">borrar_productos</span><span class="p">(</span><span class="n">lista_productos</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
-    <span class="n">eliminar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">eliminar</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Guardar el índice de los productos a eliminar</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">productos</span><span class="p">)):</span>
         <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">lista_productos</span><span class="p">:</span>
             <span class="n">cat</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -2597,10 +2597,21 @@ Considere el siguiente ejemplo:
             <span class="k">if</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">cat</span> <span class="ow">and</span> <span class="n">productos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">mar</span><span class="p">:</span>
                 <span class="n">eliminar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">eliminar</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="n">eliminar</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">eliminar</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># Debemos eliminar de atrás hacia adelante para no alterar los índices</span>
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">eliminar</span><span class="p">:</span>
         <span class="k">del</span> <span class="n">productos</span><span class="p">[</span><span class="n">e</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">productos</span>    
+
+<span class="k">def</span> <span class="nf">borrar_productos</span><span class="p">(</span><span class="n">lista_productos</span><span class="p">,</span> <span class="n">productos</span><span class="p">):</span>
+    <span class="n">borrar</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Guardar los productos a borrar a borrar</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">lista_productos</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">producto</span> <span class="ow">in</span> <span class="n">productos</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">producto</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">producto</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">producto</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">borrar</span><span class="p">:</span>
+                    <span class="n">borrar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">borrar</span><span class="p">:</span>
+        <span class="n">productos</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">productos</span>
 
 <span class="n">productos</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">&#39;fideos&#39;</span><span class="p">,</span> <span class="s1">&#39;carozzi&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>

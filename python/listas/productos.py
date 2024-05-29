@@ -25,7 +25,7 @@ def actualizar_unidades_b(categoria, marca, unidades, productos):
     return productos
 
 def borrar_productos(lista_productos, productos):
-    eliminar = []
+    eliminar = [] # Guardar el índice de los productos a eliminar
     for i in range(len(productos)):
         for p in lista_productos:
             cat = p[0]
@@ -33,10 +33,21 @@ def borrar_productos(lista_productos, productos):
             if productos[i][0] == cat and productos[i][1] == mar:
                 eliminar.append(i)
     eliminar.sort()
-    eliminar.reverse()
+    eliminar.reverse() # Debemos eliminar de atrás hacia adelante para no alterar los índices
     for e in eliminar:
         del productos[e]
     return productos    
+
+def borrar_productos(lista_productos, productos):
+    borrar = [] # Guardar los productos a borrar a borrar
+    for p in lista_productos:
+        for producto in productos:
+            if p[0] == producto[0] and p[1] == producto[1]:
+                if producto not in borrar:
+                    borrar.append(producto)
+    for b in borrar:
+        productos.remove(b)
+    return productos
                 
 productos = [
     ['fideos', 'carozzi', 30, 1],
