@@ -11,6 +11,8 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.instant.prefetch
+  palette:
+    primary: deep purple
 nav:
   - Inicio: index.md
   - Secuenciales: 
@@ -52,6 +54,8 @@ nav:
     - Pirata: ciclos/pirata.md
     - Rango: ciclos/rango.md
     - VAN: ciclos/van.md
+    - Primos: ciclos/primos.md
+    - Integrales: ciclos/integrales.md
     - Exponencial: ciclos/exponencial.md
   - Funciones:
     - Comentarios: funciones/comentarios.md
