@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../larga/">
+        <link rel="prev" href="../basquetbol/">
       
       
         <link rel="next" href="../../listas/ejemplos/">
@@ -1836,6 +1836,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../basquetbol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básquetbol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2617,6 +2638,26 @@ Un dia vi un #########
 &gt;&gt;&gt; Ingrese una palabra: un
 ## dia vi ## unicornio
 </code></pre></div>
+<details class="danger">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">texto</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un texto: &quot;</span><span class="p">)</span> <span class="c1"># Texto a censurar</span>
+<span class="n">palabra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese una palabra: &quot;</span><span class="p">)</span> <span class="c1"># Palabra a censurar</span>
+<span class="n">texto_censurado</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Variable para guardar el texto censurado</span>
+<span class="n">texto</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="c1"># Agregamos un espacio al final para que la última palabra sea censurada</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Variable temporal para guardar las palabras</span>
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">texto</span><span class="p">:</span> <span class="c1"># Recorremos cada letra del texto</span>
+    <span class="k">if</span> <span class="n">letra</span> <span class="o">!=</span> <span class="s2">&quot; &quot;</span><span class="p">:</span> <span class="c1"># Si no es un espacio, guardamos la letra en la variable temporal</span>
+        <span class="n">tmp</span> <span class="o">+=</span> <span class="n">letra</span> 
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># Si es un espacio, procesamos la palabra</span>
+        <span class="k">if</span> <span class="n">tmp</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">palabra</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="c1"># Si la palabra es igual a la palabra a censurar</span>
+            <span class="n">texto_censurado</span> <span class="o">+=</span> <span class="s2">&quot;#&quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="c1"># Agregamos tantos &quot;#&quot; como letras tenga la palabra</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># Si la palabra no es igual a la palabra a censurar</span>
+            <span class="n">texto_censurado</span> <span class="o">+=</span> <span class="n">tmp</span> <span class="c1"># Agregamos la palabra tal cual</span>
+        <span class="n">texto_censurado</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="c1"># Agregamos un espacio al final de la palabra</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Reiniciamos la variable temporal</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto_censurado</span><span class="p">)</span> <span class="c1"># Mostramos el texto censurado</span>
+</code></pre></div>
+</details>
 
 
 
