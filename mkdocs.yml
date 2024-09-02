@@ -78,6 +78,7 @@ nav:
     - Veces: strings/veces.md
     - Eliminar: strings/eliminar.md
     - Palabra más larga: strings/larga.md
+    - Básquetbol: strings/basquetbol.md
     - Censura: strings/censura.md
   - Listas:
     - Ejemplos: listas/ejemplos.md

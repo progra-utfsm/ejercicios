@@ -1,32 +1,34 @@
-entrada = input("Ingrese string: ") # Para el string con las notas
-suma = 0 # Variable para la sumatoria de notas
-mejor_materia = "" # Variable para guardar el nombre de la mejor nota
-mejor_nota = -1 # Mejor nota
-n_notas = 0 # Contador de notas
-# La logica del programa es obtener la materia y nota e ir removiendola de la entrada
-# Por lo tanto repetiremos el proceso hasta que se quiten todaslas materias y notas de la entrada
-while len(entrada) > 0: 
-    if ";" in entrada: # Si hay ';' en nuestra entrada podemos utilizar el metodo index para localizarlo
-        i = entrada.index(";") # Indice para separar materia
-        materia_nota = entrada[:i] # Obtenemos la materia con su nota
-        # Removemos la materia y nota que ya procesamos. 
-        # Se incluye el ';' para que no nos moleste en el procesamiento
-        entrada = entrada.replace(materia_nota + ";", "")
-    else: # Cuando a entrada no le queden ';', estamos en la materia del final
-        materia_nota = entrada # La informacion de la materia se encuentra en la ultima parte de la entrada
-        entrada = entrada.replace(materia_nota, "") # Se remueve la informacion (aqui entrada deberia quedar vacia)
-    # Una vez tenemos el substring materia=nota, lo separamos utilizando '='
-    j = materia_nota.index("=") # Indice para separar materia de la nota (utilizando el caracter '=')
-    materia = materia_nota[:j] # Obtenemos el nombre de la materia
-    nota = int(materia_nota[j+1:]) # Obtenemos la nota y la convertimos a entero. El +1 es para evitar el '='
-    suma += nota # Sumatoria de notas
-    n_notas += 1 # contador notas
-    # Buscamos la major nota
-    if nota > mejor_nota:
-        mejor_materia = materia
-        mejor_nota = nota
+texto = input("Ingrese string: ") # Para el string con las notas
+texto += ";" # Agregamos un punto y coma al final para que la última asignatura sea contada
+info_asignatura = "" # Variable para guardar la información de la asignatura
+mejor_asignatura = "" # Variable para guardar el nombre de la mejor nota
+mejor_nota = -1 # Variable para guardar la mejor nota
+suma = 0 # Variable para la sumatoria de notas 
+contador = 0 # Contador de notas 
+for c in texto: # Recorremos cada caracter del texto
+    if c != ";": # Si no es un punto y coma, guardamos la información de la asignatura
+        info_asignatura += c 
+    else: # Si es un punto y coma, procesamos la información de la asignatura
+        # Buscamos la posición del signo igual para separar el nombre de la asignatura de la nota
+        pos_igual = 0  # Variable para guardar la posición del signo igual
+        i = 0 # Variable para recorrer la información de la asignatura
+        while i < len(info_asignatura): # Recorremos la información de la asignatura
+            if info_asignatura[i] == "=": # Si encontramos el signo igual
+                pos_igual = i # Guardamos la posición del signo igual
+                i = len(info_asignatura) # Salimos del ciclo para evitar seguir buscando
+            i += 1 # Aumentamos el contador para recorrer la información de la asignatura
+        # Obtenemos el nombre de la asignatura y la nota
+        nombre = info_asignatura[:pos_igual] 
+        nota = int(info_asignatura[pos_igual+1:])
+        info_asignatura = "" # Reiniciamos la información de la asignatura
+        contador += 1 # Aumentamos el contador de notas
+        suma += nota # Sumamos la nota a la sumatoria
+        # Buscamos la mejor nota
+        if nota > mejor_nota:
+            mejor_nota = nota
+            mejor_asignatura = nombre
 # Calculamos el promedio
-promedio = int(round(suma / n_notas)) 
-# Mostramos lo solicitado 
+promedio = round(suma / contador)
+# Mostramos lo solicitado
 print("Promedio:", promedio)
-print("Mejor materia:", mejor_materia)
+print("Mejor asignatura:", mejor_asignatura)

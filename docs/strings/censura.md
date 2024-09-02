@@ -16,3 +16,7 @@ Un dia vi un #########
 ## dia vi ## unicornio
 ```
 
+??? danger "Solución"
+    ```python
+    --8<-- "python/strings/censura.py"
+    ```
