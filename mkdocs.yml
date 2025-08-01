@@ -57,14 +57,6 @@ nav:
     - Primos: ciclos/primos.md
     - Integrales: ciclos/integrales.md
     - Exponencial: ciclos/exponencial.md
-  - Funciones:
-    - Comentarios: funciones/comentarios.md
-    - Fuerza gravitacional: funciones/gravitacional.md
-    - Invertir Número: funciones/invertir.md
-    - Aproximación exponencial: funciones/exponencial.md
-    - Método de Newton: funciones/newton.md
-    - Crédito Hipotecario: funciones/hipoteca.md
-    - Salario: funciones/salario.md
   - Strings:
     - Ejemplos: strings/ejemplos.md
     - Stringones: strings/stringones.md
@@ -80,6 +72,14 @@ nav:
     - Palabra más larga: strings/larga.md
     - Básquetbol: strings/basquetbol.md
     - Censura: strings/censura.md
+  - Funciones:
+    - Comentarios: funciones/comentarios.md
+    - Fuerza gravitacional: funciones/gravitacional.md
+    - Invertir Número: funciones/invertir.md
+    - Aproximación exponencial: funciones/exponencial.md
+    - Método de Newton: funciones/newton.md
+    - Crédito Hipotecario: funciones/hipoteca.md
+    - Salario: funciones/salario.md
   - Listas:
     - Ejemplos: listas/ejemplos.md
     - Desviación estándar: listas/desviacion.md
