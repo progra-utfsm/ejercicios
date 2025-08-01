@@ -1,5 +1,5 @@
 site_name: Ejercicios Progra
-copyright: Copyright &copy; 2019 - 2024 &bullet; Progra UTFSM
+copyright: Copyright &copy; 2019 - 2025 &bullet; Progra UTFSM
 theme:
   name: material
   language: es
@@ -92,9 +92,6 @@ nav:
     - Producto matriz-vector: listas/producto_matriz.md
     - Productos: listas/productos.md
     - Texto: listas/texto.md
-  # - Tuplas: (deprecated)
-  #   - Rectas: tuplas/rectas.md
-  #   - Supermercado: tuplas/supermercado.md
   - Diccionarios:
     - Final Copa América: diccionarios/copa.md
     - Fórmula 1: diccionarios/formula1.md
