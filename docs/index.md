@@ -1,6 +1,6 @@
 ![DI-UTFSM](./images/di-utfsm.png "DI-UTFSM")
 
-# Ejercicios IWI-131
+# Ejercicios Programación UTFSM
 
 Selección de ejercicios de [progra.usm.cl](http://progra.usm.cl) y otros :nerd: :computer: ...
 
