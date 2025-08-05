@@ -16,3 +16,4 @@ Tercer amigo debe: -2000.0
 ??? danger "Solución"
     ```python
     --8<-- "python/secuenciales/amigos.py"
+    ```
