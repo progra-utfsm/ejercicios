@@ -33,9 +33,9 @@ donde $a$, $b$ y $c$ son las longitudes de cada lado y $s=\dfrac{a+b+c}{2}$ es e
 ### Ejemplo
 
 ```
-Ingrese longitud de lado 1: 3
-Ingrese longitud de lado 2: 4
-Ingrese longitud de lado 3: 5
+Ingrese longitud del lado a: 3
+Ingrese longitud del lado b: 4
+Ingrese longitud del lado c: 5
 El área del triángulo es 6.0
 ```
 
