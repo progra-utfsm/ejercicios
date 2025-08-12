@@ -29,6 +29,7 @@ nav:
     - Número Invertido: secuenciales/invertido.md
     - Convertidor segundos: secuenciales/segundos.md
     - Edad: secuenciales/edad.md
+    - Zeller: secuenciales/zeller.md
   - Condicionales:
     - Inicio: condicionales/index.md
     - Tablas de verdad: condicionales/tablas.md
