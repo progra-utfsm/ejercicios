@@ -22,10 +22,12 @@ Aplique descomposición de problemas para implementar un programa que calcule el
 ## Ejemplo
 ```
 Monto por hora: $20000
-Horas trabajadas: 45
-Base: $ 910000
-Impuestos: $ 9199
-Sueldo: $ 900801
+Horas trabajadas: 50
+Imponible: $ 1060000
+Descuentos legales: $ 193662.0
+Base tributaria: $ 866338.0
+Impuestos: $ 7453
+Sueldo: $ 858885
 ```
 
 ??? danger "Solución"
