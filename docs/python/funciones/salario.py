@@ -42,13 +42,13 @@ hrs_trabajadas = int(input('Horas trabajadas: '))
 # Calculos
 imponible = int(round(calcular_base(hrs_trabajadas, monto_por_hora)))
 descuentos_legales = salud(imponible) + afp(imponible)
-base = imponible - descuentos_legales
-impuestos = int(round(calcular_monto_impuestos(base)))
-sueldo = int(round(base - impuestos))
+base_tributable = imponible - descuentos_legales
+impuestos = int(round(calcular_monto_impuestos(base_tributable)))
+sueldo = int(round(base_tributable - impuestos))
 
 # Salida
 print("Imponible: $", imponible)
 print("Descuentos legales: $", descuentos_legales)
-print("Base tributaria: $", base)
+print("Base tributaria: $", base_tributable)
 print("Impuestos: $", impuestos)
 print("Sueldo: $", sueldo)
