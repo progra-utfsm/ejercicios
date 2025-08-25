@@ -19,6 +19,15 @@ El salario base se calcula a partir de las horas trabajadas en el mes. Cada empl
 
 Aplique descomposición de problemas para implementar un programa que calcule el salario que recibirá un empleado al término de un mes, indicando el detalle de lo ganado y lo descontado.
 
+## Ejemplo
+```
+Monto por hora: $20000
+Horas trabajadas: 45
+Base: $ 910000
+Impuestos: $ 9199
+Sueldo: $ 900801
+```
+
 ??? danger "Solución"
     ```python
     --8<-- "python/funciones/salario.py"
