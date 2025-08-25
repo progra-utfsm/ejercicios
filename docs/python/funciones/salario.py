@@ -12,15 +12,15 @@ def calcular_base(hrs, monto):
 
 # Tabla de impuestos
 def calcular_monto_impuestos(imponible):
-   if imponible < 680022:
+   if imponible <= 680022:
       return 0
-   elif imponible < 1511160:
+   elif imponible <= 1511160:
       return imponible * 4 / 100 - 27200.88
-   elif imponible < 2518600:
+   elif imponible <= 2518600:
       return imponible * 8 / 100 - 87647.28
-   elif imponible < 3526040:
+   elif imponible <= 3526040:
       return imponible * 13.5 / 100 - 226170.28
-   elif imponible < 4533480:
+   elif imponible <= 4533480:
       return imponible * 23/100 - 561144.08
    elif imponible < 6044640:
       return imponible * 30.4 / 100 - 896621.60
