@@ -22,7 +22,7 @@ total = 0
 continuar = True
 while continuar:
     gasto = int(input('Ingrese un gasto (0 para terminar): '))
-    if gasto < 0:
+    if gasto <= 0:
         continuar = False
     else:
         total += gasto
