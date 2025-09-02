@@ -15,3 +15,8 @@ Ingrese una oración: En un lugar de la Mancha de cuyo nombre no quiero acordarm
 Ingrese una palabra: no
 La palabra no aparece 2 veces en la oración.
 ```
+
+??? danger "Solución"
+    ```python
+    --8<-- "python/strings/veces.py"
+    ```
