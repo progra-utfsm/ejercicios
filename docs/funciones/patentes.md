@@ -36,5 +36,5 @@ True
 
 ??? danger "Solución"
     ```python
-    --8<-- "python/strings/patentes.py"
+    --8<-- "python/funciones/patentes.py"
     ```

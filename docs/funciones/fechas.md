@@ -4,5 +4,5 @@ Una fecha mágica es una fecha en la que el día multiplicado por el mes es igua
 
 ??? danger "Solución"
     ```python
-    --8<-- "python/strings/fechas.py"
+    --8<-- "python/funciones/fechas.py"
     ```

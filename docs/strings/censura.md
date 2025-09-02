@@ -5,14 +5,18 @@ Construya un algoritmo que reciba un texto compuesto únicamente de palabras sep
 ## Ejemplos
 
 ```
->>> Ingrese un texto: Un dia vi un unicornio
->>> Ingrese una palabra: perro
+Ingrese un texto: Un dia vi un unicornio
+Ingrese una palabra: perro
 Un dia vi un unicornio
->>> Ingrese un texto: Un dia vi un unicornio
->>> Ingrese una palabra: UNICORNIO
+```
+```
+Ingrese un texto: Un dia vi un unicornio
+Ingrese una palabra: UNICORNIO
 Un dia vi un #########
->>> Ingrese un texto: Un dia vi un unicornio
->>> Ingrese una palabra: un
+```
+```
+Ingrese un texto: Un dia vi un unicornio
+Ingrese una palabra: un
 ## dia vi ## unicornio
 ```
 

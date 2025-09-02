@@ -61,26 +61,28 @@ nav:
   - Strings:
     - Ejemplos: strings/ejemplos.md
     - Stringones: strings/stringones.md
-    - Coincidencia: strings/coincidencia.md
-    - ADN: strings/adn.md
-    - Fechas mágicas: strings/fechas.md
-    - Comparación: strings/comparacion.md
-    - Contraseña: strings/contraseña.md
-    - Asignaturas: strings/asignaturas.md
-    - Patentes: strings/patentes.md
-    - Veces: strings/veces.md
-    - Eliminar: strings/eliminar.md
+    - Coincidencia: strings/coincidencia.md    
+    - Comparación: strings/comparacion.md           
+    - Veces: strings/veces.md    
     - Palabra más larga: strings/larga.md
     - Básquetbol: strings/basquetbol.md
     - Censura: strings/censura.md
+    - Asignaturas: strings/asignaturas.md 
   - Funciones:
     - Comentarios: funciones/comentarios.md
     - Fuerza gravitacional: funciones/gravitacional.md
-    - Invertir Número: funciones/invertir.md
-    - Aproximación exponencial: funciones/exponencial.md
-    - Método de Newton: funciones/newton.md
+    - Eliminar: funciones/eliminar.md
+    - Veces: funciones/veces.md    
+    - Invertir Número: funciones/invertir.md    
+    - Palabra más larga: funciones/larga.md
     - Crédito Hipotecario: funciones/hipoteca.md
     - Salario: funciones/salario.md
+    - Aproximación exponencial: funciones/exponencial.md
+    - Método de Newton: funciones/newton.md
+    - ADN: funciones/adn.md
+    - Fechas mágicas: funciones/fechas.md
+    - Contraseña: funciones/password.md
+    - Patentes: funciones/patentes.md
   - Listas:
     - Ejemplos: listas/ejemplos.md
     - Desviación estándar: listas/desviacion.md

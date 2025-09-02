@@ -4,5 +4,5 @@ Escribir la función `eliminar(texto, palabra)` que retorna un `string` del que 
 
 ??? danger "Solución"
     ```python
-    --8<-- "python/strings/eliminar.py"
+    --8<-- "python/funciones/eliminar.py"
     ```

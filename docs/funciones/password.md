@@ -4,7 +4,7 @@ Escriba una función que retorne `True` si una contraseña particular es suficie
 
 ??? danger "Solución"
     ```python
-    --8<-- "python/strings/password.py"
+    --8<-- "python/funciones/password.py"
     ```
 
 Modifique la función anterior para que reciba como parámetro adicional la contraseña anterior. Agregue como condición para ser una contraseña segura que la nueva contraseña no debe ser similar a la anterior con $3$ o menos caracteres de tolerancia.

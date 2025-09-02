@@ -4,13 +4,13 @@ En el idioma de la tribu de los *Stringones*, la mayoría de las palabras tienen
 
 Por ejemplo, la palabra `pppprrrrrogggrraaa` se abrevia `4p5r1o3g2r3a`.
 
-Desarrolle la función `original(abreviada)` que recibe como parámetro una palabra abreviada, y retorna la palabra original, antes de haber sido codificada. Suponga que ninguna letra aparece más de nueve veces seguidas.
+Desarrolle un programa que reciba una palabra abreviada, y muestre la palabra original, antes de haber sido codificada. Suponga que ninguna letra aparece más de nueve veces seguidas.
 
 ## Ejemplo
 
 ```
->>> original('4p5r1o3g2r3a')
-pppprrrrrogggrraaa
+Palabra abreviada: 4p5r1o3g2r3a
+Palabra original: pppprrrrrogggrraaa
 ```
 
 ??? danger "Solución"

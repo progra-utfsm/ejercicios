@@ -4,5 +4,5 @@ Una cadena de ADN es válida si está compuesta únicamente por las bases Adenin
 
 ??? danger "Solución"
     ```python
-    --8<-- "python/strings/adn.py"
+    --8<-- "python/funciones/adn.py"
     ```
