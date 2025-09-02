@@ -83,6 +83,7 @@ nav:
     - Fechas mágicas: funciones/fechas.md
     - Contraseña: funciones/password.md
     - Patentes: funciones/patentes.md
+    - Collatz: funciones/collatz.md
   - Listas:
     - Ejemplos: listas/ejemplos.md
     - Desviación estándar: listas/desviacion.md
