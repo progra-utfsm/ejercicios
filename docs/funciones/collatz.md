@@ -23,12 +23,14 @@ $$
 Realizando iteraciones sucesivas, el proceso termina en 1 para cualquier entero positivo inicial (según la conjetura).
 
 Se solicita que realice un programa para implementar esta conjetura, con lo siguiente:
-* Una función que retorne verdadero si un número es par y falso si no lo es.
-* Una función que aplique la operación $n/2$ para $n$ par.
-* Una función que aplique la operación $3n+1$ si $n$ es impar.
-* Mostrar todos los valores de la secuencia hasta terminar en $1$.
+
+- Una función que retorne verdadero si un número es par y falso si no lo es.
+- Una función que aplique la operación $n/2$ para $n$ par.
+- Una función que aplique la operación $3n+1$ si $n$ es impar.
+- Mostrar todos los valores de la secuencia hasta terminar en $1$.
 
 Además, el programa debe determinar:
+
 1. La cantidad de números pares que se generaron.
 2. La cantidad de números impartes que se generaron.
 3. El máximo valor obtenido.
