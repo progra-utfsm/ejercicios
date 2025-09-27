@@ -2,7 +2,7 @@
 
 # Ejercicios Programación UTFSM
 
-Selección de ejercicios de programación y otros :nerd: :computer: ...
+Selección de ejercicios de programación :nerd: :computer: ...
 
 Utilice la navegación que está en la parte superior izquierda para moverse entre contenidos.
 
