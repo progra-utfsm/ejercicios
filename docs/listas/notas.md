@@ -18,8 +18,11 @@ Los datos que se almacenan, para cada alumno, son el nombre y una cantidad varia
 Se le pide que escriba las siguientes funciones:
 
 1. La función `calcular_promedio(alumnos)` que recibe la lista alumnos con la estructura que se indicó, y retorna una nueva lista que contiene el nombre y el promedio de cada alumno.
+2. La funcion `mejor_promedio(alumnos)` que entrega el nombre del alumno con mejor promedio. Si hay varios alumnos empatados con el mejor promedio, la función retorna alguno de ellos, sin importar cuál.
 
-## Ejemplo:
+## Ejemplos:
+
+Pregunta 1.
 
 ```python
 >>> calcular_promedio(alumnos)
@@ -28,10 +31,7 @@ Se le pide que escriba las siguientes funciones:
 ]
 ```
 
-2. La funcion `mejor_promedio(alumnos)` que entrega el nombre del alumno con mejor promedio. Si hay varios alumnos empatados con el mejor promedio, la función retorna alguno de ellos, sin importar cuál.
-
-## Ejemplo:
-
+Pregunta 2.
 ```python
 >>> mejor_promedio(alumnos)
 'Francisca Almonacid'
