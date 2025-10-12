@@ -96,6 +96,8 @@ nav:
     - Producto matriz-vector: listas/producto_matriz.md
     - Productos: listas/productos.md
     - Texto: listas/texto.md
+    - Notas: listas/notas.md
+    - PyCornerShop: listas/pycornershop.md
   - Diccionarios:
     - Final Copa América: diccionarios/copa.md
     - Fórmula 1: diccionarios/formula1.md
