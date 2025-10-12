@@ -26,7 +26,7 @@ Se le pide que escriba las siguientes funciones:
 [ ['Alberto Gonzalez', 47], ['Francisca Almonacid', 70],
     ['Pedro Reyes', 40], ['Juan Campos', 48], ['Andrea Zamora', 30]
 ]
-   ```
+```
 
 2. La funcion `mejor_promedio(alumnos)` que entrega el nombre del alumno con mejor promedio. Si hay varios alumnos empatados con el mejor promedio, la función retorna alguno de ellos, sin importar cuál.
 
@@ -36,7 +36,6 @@ Se le pide que escriba las siguientes funciones:
 >>> mejor_promedio(alumnos)
 'Francisca Almonacid'
 ```
-
 
 ??? danger "Solución"
     ```python
