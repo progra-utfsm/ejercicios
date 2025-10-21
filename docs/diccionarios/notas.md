@@ -50,8 +50,4 @@ datos = "Carlos Pérez:cálculo=85,física=92;María González:programación=74;
 }
 ```
 
-??? danger "Solución"
-    ```python
-    --8<-- "python/diccionarios/notas.py"
-    ```
 
